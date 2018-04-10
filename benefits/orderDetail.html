@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../css/main.css">
+    <script>
+    window.PointerEvent = undefined
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <section class="benefitsBox scrollBox">
+            <div>
+                <div class="orderBox">
+                    <div class="orderAddress">
+                        <i class="iconfontYZ iconYZ-store_notice"></i>
+                        <span class="select">请选择收货地址</span>
+                        <i class="iconfontYZ iconYZ-youjiantou f_r"></i>
+                    </div>
+                    <div class="orderLst">
+                        <div class="item" data-orderInfo="72,1">
+                            <div class="orderItem">
+                                <div class="shopAvar">
+                                    <img src="../images/img10.jpg">
+                                </div>
+                                <div class="gameId">
+                                    <div class="name">大皇帝 银卡1</div>
+                                    <div class="money"><span>72</span> U币 x1</div>
+                                </div>
+                            </div>
+                            <!-- // -->
+                            <div class="form_normal">
+                                <div class="row_form">
+                                    <p class="title_form">使用积分</p>
+                                    <div class="box_form formpopUp" data-jf="20" data-ub="5">请选择可以使用的积分</div>
+                                    <i class="iconfontYZ iconYZ-youjiantou"></i>
+                                </div>
+                                <!--
+                                <div class="row_form">
+                                    <p class="title_form">使用优惠券</p>
+                                    <div class="box_form">无可用优惠券</div>
+                                    <i class="iconfontYZ iconYZ-youjiantou"></i>
+                                </div>
+                                <div class="row_form">
+                                    <p class="title_form">买家留言</p>
+                                    <div class="box_form">
+                                        <p class="tip_formN"><em class="numb_textarea">0</em>/250 字</p>
+                                    </div>
+                                    <section class="next_row">
+                                        <textarea name="" maxlength="45" cols="" rows="3" class="textarea_normal" placeholder="请描述你的问题"></textarea>
+                                    </section>
+                                </div>
+                                -->
+                            </div>
+                            <div class="priceBox">小计: <span class="price">500</span> U币</div>
+                        </div>
+                        <div class="item" data-orderInfo="72,2">
+                            <div class="orderItem">
+                                <div class="shopAvar">
+                                    <img src="../images/img10.jpg">
+                                </div>
+                                <div class="gameId">
+                                    <div class="name">大皇帝 银卡1</div>
+                                    <div class="money"><span>72</span> U币 x2</div>
+                                </div>
+                            </div>
+                            <!-- // -->
+                            <div class="form_normal">
+                                <div class="row_form">
+                                    <p class="title_form">使用积分</p>
+                                    <div class="box_form formpopUp" data-jf="10" data-ub="20">请选择可以使用的积分</div>
+                                    <i class="iconfontYZ iconYZ-youjiantou"></i>
+                                </div>
+                            </div>
+                            <div class="priceBox">小计: <span class="price">0</span> U币</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="totalBox">
+                <a href="" class="btn_buy f-fr">提交订单</a>
+                <div class="totalNum f-fr">合计：<span class="total" id="priceAll">0</span> U币</div>
+            </div>
+        </section>
+    </div>
+    <div class="salePopUp">
+        <div class="checkbox">
+            <div class="saleNum f_l">
+                <span id="jsBox"></span>积分可抵<em id="ubBox">20</em>U币
+            </div>
+            <label class="frIpt f_r">
+                <input type="checkbox" class="mgc" data-val='' data-optionid='couponUb' />
+            </label>
+        </div>
+        <a href="javscript:;" class="btn_buy">关闭</a>
+    </div>
+    <div class="pop_tong_group pop_integralS overlay" style="display: none;">
+        <a href="javascript:;" title="关闭弹窗" class="btn_pop_close"></a>
+        <div class="pop_tong_box">
+            <div class="ptong_title">提示</div>
+            <div class="order-title">您的积分剩余25，无法抵扣</div>
+            <div class="order-btn">
+                <div class="btn btn_blue">知道了</div>
+            </div>
+        </div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/iscroll.js"></script>
+<script src="../js/main.js"></script>
+<script>
+$(function() {
+    Community.isscrollFunc(".scrollBox");
+
+    var jfAll = 70;
+    $(".orderBox .formpopUp").on('touchstart', function() {
+        $(".salePopUp").addClass('salePopUp_show');
+        var $jfU = $(this).find(".jf_user"),
+            ub = Number($(this).attr("data-ub")),
+            jf = Number($(this).attr("data-jf")),
+            $input = $(".salePopUp").find('input'),
+            $jfBox = $("#jsBox"),
+            $ubBox = $("#ubBox");
+        $jfBox.text(jf);
+        $ubBox.text(ub);
+        $input.each(function(i, el) {
+            if ($jfU.length > 0) {
+                if (!$(el).checked) $(el).attr({ 'data-val': ub, 'data-jf': jf, 'checked': true });
+            } else {
+                $(el).attr({ 'data-val': ub, 'data-jf': jf }).removeAttr("checked")
+            }
+        })
+        $.orderIndex = $(this).index('.formpopUp');
+    });
+    // 弹窗关闭
+    $(".salePopUp .btn_buy").on('touchstart', function() {
+        $(".salePopUp").removeClass('salePopUp_show');
+    })
+    // 关闭
+    $(".btn_blue,.btn_pop_close").on("click", function() {
+        $(".overlay").hide();
+    })
+
+    //优惠多选框
+    $("input[data-optionid='couponUb']").on('change', function(event) {
+        var val = Number($(this).attr("data-val")),
+            jf = Number($(this).attr("data-jf")),
+            html, $forp;
+        $forp = $(".orderBox").find('.formpopUp').eq($.orderIndex);
+        if ($(this).is(':checked')) {
+            if ((jfAll - jf) >= 0) {
+                html = jf + '积分可抵扣 <span class="jf_user" data-ub="' + val + '">' + val + '</span>U币';
+                jfAll = jfAll - jf;
+                setTimeout(function() {
+                    $(".salePopUp").removeClass('salePopUp_show');
+                }, 500)
+            } else {
+                $(this).removeAttr("checked");
+                $(".salePopUp").removeClass('salePopUp_show');
+                $(".overlay").show();
+            }
+        } else {
+            jfAll = jfAll + jf;
+            html = "请选择可以使用的积分";
+        }
+        console.log(jfAll)
+        $forp.html(html);
+        changePrice();
+    });
+
+    //价格变化
+    function changePrice() {
+        var item = $(".orderLst").find(".item"),
+            priceAll = 0,
+            formula = "";
+
+        item.each(function(index, el) {
+            if (typeof($(el).attr('data-orderinfo')) != 'undefined') {
+                var $price = $(el).find('.price'),
+                    $checkbox = $(el).find(".jf_user"),
+                    array_info = ($(el).attr('data-orderinfo')).split(","),
+                    val = array_info[0] * array_info[1];
+                if ($checkbox.length > 0) {
+                    var n = $checkbox.data("ub");
+                    val = val - n;
+                }
+                $price.text(val);
+                priceAll += val;
+            }
+
+        });
+        if (formula == "") formula = "0U币";
+        formula = formula.replace("+", "");
+        $("#priceAll").text(priceAll);
+    };
+    changePrice();
+})
+</script>

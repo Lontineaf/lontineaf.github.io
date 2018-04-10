@@ -1,0 +1,78 @@
+@charset "UTF-8";
+.friendBox {
+    .main0, .main1, .main2, .main3, .main4, .main5, .main6, .main7, .main8, .main9 {
+        left:0;
+        right:0;
+    }
+    .orglistbg {
+        line-height: 3.333333rem;
+        clear: both;
+        position: relative;
+        background:$bg;
+    }
+    .orgList {
+        padding-left: 1.4rem;
+        border-top: 1px solid $bc;
+        line-height: 3.333333rem;
+        position: relative;
+        border-bottom: 1px solid $bc;
+        padding-right: 1rem;
+        line-height: 5rem;
+        background:$bg;
+    }
+    .orgName {
+        padding-left: 1.4rem;
+        border-bottom: 1px solid $bc;
+        margin-bottom: 8px;
+        line-height: 5rem;
+        position:relative;
+        background:$bg;
+    }
+    .item {
+        line-height: 5rem;
+        position: relative;
+        border-bottom: 1px solid $bc;
+        padding-right: 1rem;
+        margin-left: 1rem;
+        @include clearfix();
+    }
+    .group {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        .icon {
+            width: 4rem;
+            height: 2.5rem;
+            display: block;
+        }
+    }
+    .avar {
+        width: 3.333333rem;
+        height: 3.333333rem;
+        margin-top: 10px;
+        margin-bottom:10px;
+        img {
+            width: 3.333333rem;
+            height: 3.333333rem;
+            vertical-align: top;
+        }
+    }
+    .avarMask {
+        width: 3.333333rem;
+        height: 3.333333rem;
+    }
+    .gameId em {
+        color:$fblue;
+    }
+}
+
+.padded {
+    background: $bc;
+    margin: 15px;
+    border-radius: 3px;
+    line-height: 36px;
+    text-align: center;
+    color: $fgrey;
+}

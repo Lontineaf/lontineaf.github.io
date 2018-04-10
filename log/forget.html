@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="wrapper">
+            <div class="logBox">
+                <p>
+                    <input type="text" placeholder="请输入手机号码" required="required">
+                </p>
+                <p class="pr">
+                    <input type="text" placeholder="请输入验证码" class="input-yzm " required="required">
+                    <input type="button" value="获取验证码" class="btn-yzm">
+                </p>
+                <p>
+                    <input type="password" placeholder="请输入密码,6~20个字符" required="required" class="aa">
+                </p>
+                <div class="btn btn-mid btn-blue">重设密码</div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/main.js"></script>
+<script>
+    $(function(){
+        $(".btn-yzm").click(function(){
+            Community.yzm(30);
+        })
+
+
+        $(".aa").focus(function(){
+            $(".logBox").animate({"top":0},"fast");
+        }).blur(function(){
+            $(".logBox").animate({"top":"5%"},"fast");
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body class="mob">
+    <header class="header">
+        <div class="topLeft f_l">
+            <a href="javascript:;">
+                <div class="icon" style="background: url(images/ico-love0.png);background-size: cover;"></div>
+            </a>
+            <a href="javascript:;">
+                <div class="icon" style="background: url(images/ico-love0.png);background-size: cover;"></div>
+            </a>
+        </div>
+        <div class="topRight f_r">
+            <a href="javascript:;">
+                <div class="icon" style="background: url(images/ico-love0.png);background-size: cover;"></div>
+            </a>
+            <a href="javascript:;">
+                <div class="icon" style="background: url(images/ico-love0.png);background-size: cover;"></div>
+            </a>
+        </div>
+        <div class="headTit">玩家社区</div>
+    </header>
+    <div class="mobileBox" style="top: 42px;">
+        <div class="orgBox ">
+            <div class="mesBox scrollable">
+                <div class="list mesList ">
+                    <dl class="item">
+                        <dt>
+                            <div class="avar"><img src="images/avar.jpg"></div>
+                            <div class="name">诅咒龙后</div>
+                        </dt>
+                        <dd class="box">
+                            <div class="text">你在说什么我在唱什么，原来原来你是我的主打歌！</div>
+                        </dd>
+                    </dl>
+                    <div class="chatTime">下午4:08</div>
+                    <dl class="item self">
+                        <dt>
+                            <div class="avar"><img src="images/avar.jpg"></div>
+                            <div class="name">诅咒龙后</div>
+                        </dt>
+                        <dd class="box">
+                            <div class="text">王菲《幻乐一场》演唱会于12月5日晚8点开启预售，看台票价格1800-7800，内场票未放出。预售刚开启，便一扫而空，显示缺货。王菲《幻乐一场》演唱会于12月30日晚在上海举办，就此一场。演唱会宣布举办后，屡次有天价门票传闻，黄牛更将第一排1号2号的叫价抬高到100万。</div>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt>
+                            <div class="avar"><img src="images/avar.jpg"></div>
+                            <div class="name">诅咒龙后</div>
+                        </dt>
+                        <dd class="box">
+                            <div class="text">你有种再说一遍？信不信我打死你</div>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt>
+                            <div class="avar"><img src="images/avar.jpg"></div>
+                            <div class="name">诅咒龙后</div>
+                        </dt>
+                        <dd class="box">
+                            <div class="text">腾讯证券讯 北京时间12月6日凌晨消息，北京时间周二凌晨在谷歌网站上美元兑人民币报价惊现7.48，外汇网站XE报价也给出了美元兑人民币日高7.48187的报价。</div>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt>
+                            <div class="avar"><img src="images/avar.jpg"></div>
+                            <div class="name">诅咒龙后</div>
+                        </dt>
+                        <dd class="box">
+                            <div class="text"><img src="images/a8.jpg">
+                                <div class="failPoint"></div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <p class="none">正在加载中，请稍后</p>
+                </div>
+            </div>
+        </div>
+        <div class="orgText">
+            <div class="padding flexBox">
+                <div class="faceOpt">
+                    <div class="i-smile smile ico"></div>
+                    <div class="i-photo photo ico">
+                        <input type="file" accept="image/*" class="needsclick">
+                    </div>
+                </div>
+                <div class="textareaBox">
+                    <div class="textarea needsclick scrollable" name="orgText" contenteditable="true"></div>
+                    <button class="sendBtn">发送</button>
+                </div>
+            </div>
+            <!-- 表情 -->
+            <div class="expBox none">
+                <div class="pub-faces">
+                    <div class="ui-carousel js-slide" data-ride="carousel" id="slider">
+                    </div>
+                </div>
+            </div>
+            <!-- 表情end -->
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.js"></script>
+<!-- <script src="js/fastclick.js"></script>
+<script src="js/sidebar.js"></script> -->
+<script>
+$(function() {
+    // FastClick.attach(document.body);
+    wxApp.init();
+})
+var wxApp = {
+    init: function() {
+        this.events();
+        this.boxSize();
+    },
+    events: function() {
+        $(".checkserver").click(function() {
+            $(".serverDialog").addClass("in").show();
+        })
+        $(".textarea").keyup(function() {
+            wxApp.checkVal(".textarea");
+        })
+        var interval = setInterval(function() {
+            document.body.scrollTop = document.body.scrollHeight
+        }, 200)
+        $(".maskBox").click(function() {
+            $(".diaImg").removeClass("in");
+        })
+        $(".sendBtn").click(function() {
+            if ($(".textarea").html() == "") {
+                // $("body").dialog({
+                //     text: "内容不能为空"
+                // })
+            } else {
+                $(".mesList").append(wxApp.templateHtml($(".textarea").html(), "loading"));
+                $(".textarea").html("");
+                $(".mesBox ").scrollTop(999999);
+            }
+            wxApp.checkVal(".textarea");
+        })
+        $(".textarea").focus(function() {
+            $(".expBox").addClass("none");
+            wxApp.boxSize();
+        })
+        $(".mesBox").on("click", ".text img", function() {
+            var image = new Image();
+            image.src = $(this).attr("src");
+            $(".diaImg").addClass("in").find("img").attr("src", $(this).attr("src"));
+        })
+        $(".diaImg .closeBtn").click(function() {
+            $(".diaImg").removeClass("in")
+        });
+        $(".serverDialog .closeBtn").click(function() {
+            $(".serverDialog").removeClass("in").hide();
+        });
+        $(".orgBox").click(function() {
+            $(".expBox").addClass("none");
+            wxApp.boxSize();
+        })
+        $(window).resize(function() {
+            wxApp.boxSize();
+
+        })
+        $(".ui-carousel").on("click", ".express", function(e) {
+            e = e || window.event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+            var oldval = $(".textarea").html();
+            $(".textarea").append('<img class="exp" src="images/face/001.png"/>')
+            // $(".textarea").html(oldval + $(this).data("em")).scrollTop(999999);
+            wxApp.checkVal(".textarea");
+        })
+
+        $(".smile").click(function() {
+            $(".expBox").toggleClass("none");
+            wxApp.mobileEmoji();
+
+            wxApp.boxSize();
+        })
+        $('.photo').on('change', 'input[type=file]', function(e) {
+            var fileReader = new FileReader();
+            fileReader.readAsDataURL(this.files[0]); // 读取文件内容
+            fileReader.onload = function(e) {
+                var img = new Image();
+                img.src = this.result;
+                $(".mesList").append(wxApp.templateHtml('<img src="' + img.src + '"</div>'));
+                $(".textarea").html("");
+                $(this).val("");
+                $(".mesBox").scrollTop(999999);
+            };
+        });
+        $(document).on('touchmove', function(e) {
+            e.preventDefault();
+        });
+
+        var scrolling = false;
+        $('body').on('touchstart', '.scrollable', function(e) {
+            if (!scrolling) {
+                scrolling = true;
+                if (e.currentTarget.scrollTop === 0) {
+                    e.currentTarget.scrollTop = 1;
+                } else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop + e.currentTarget.offsetHeight) {
+                    e.currentTarget.scrollTop -= 1;
+                }
+                scrolling = false;
+            }
+        });
+        $('body').on('touchmove', '.scrollable', function(e) {
+            e.stopPropagation();
+        });
+    },
+    checkVal: function(dom) {
+        if ($(dom).html() != "") {
+            $(".sendBtn").addClass("in");
+        } else {
+            $(".sendBtn").removeClass("in");
+        }
+    },
+    boxSize: function() {
+        $(".mesBox").css("height", $("body").height() - $(".orgText").height() - 70).scrollTop(999999);
+    },
+    mobileEmoji: function() {
+        if (wxApp.orient() == "heng") {
+            heng();
+        } else {
+            shu();
+        }
+        function shu(){
+            var expressionHtml = '<ul class="ui-carousel-inner face-panel-wrap">';
+            for (var i = 1; i <= 3; i++) {
+                expressionHtml += '<li class="ui-carousel-item face-panel face-panel-' + i + '">';
+                for (var j = 0; j <= 23; j++) {
+                    var n = 20 * (i - 1) + j;
+                    n < 10 ? n = "00" + n : n;
+                    n < 100 && n >= 10 ? n = "0" + n : n;
+                    expressionHtml += '<span class="express" index="' + n + '" data-em="[em_' + n + ']"></span>';
+                }
+                expressionHtml += '</li>';
+            }
+            expressionHtml += '</ul>';
+            var bottomHtml = '<ol id="position" class="ui-carousel-indicators">' +
+                '<li class="js-active"></li>' +
+                '<li class=""></li>' +
+                '<li class=""></li>' +
+                '</ol>';
+            expressionHtml += bottomHtml;
+            $("#slider").html(expressionHtml);
+
+        }
+        function heng(){
+            var expressionHtml = '<ul class="ui-carousel-inner face-panel-wrap">';
+            for (var i = 1; i <= 4; i++) {
+                expressionHtml += '<li class="ui-carousel-item face-panel face-panel-' + i + '">';
+                for (var j = 0; j <= 19; j++) {
+                    var n = 20 * (i - 1) + j;
+                    n < 10 ? n = "00" + n : n;
+                    n < 100 && n >= 10 ? n = "0" + n : n;
+                    expressionHtml += '<span class="express" index="' + n + '" data-em="[em_' + n + ']"></span>';
+                }
+                expressionHtml += '</li>';
+            }
+            expressionHtml += '</ul>';
+            var bottomHtml = '<ol id="position" class="ui-carousel-indicators">' +
+                '<li class="js-active"></li>' +
+                '<li class=""></li>' +
+                '<li class=""></li>' +
+                '<li class=""></li>' +
+                '</ol>';
+            expressionHtml += bottomHtml;
+            $("#slider").html(expressionHtml);
+            var ww = $(".ui-carousel").width();
+            // var editH = $(".container").height() - $(".header").height() - $(".article-content").height() - $(".editTool").height();
+           
+            $(".face-panel span").css({
+                width: ww / 10,
+                height: ww / 10
+            });
+        }
+        var slider =
+            Swipe(document.getElementById('slider'), {
+                continuous: true,
+                callback: function(pos) {
+
+                    var i = bullets.length;
+                    while (i--) {
+                        bullets[i].className = ' ';
+                    }
+                    bullets[pos].className = 'js-active';
+                }
+            });
+        var bullets = document.getElementById('position').getElementsByTagName('li');
+        $(".express").height($(".express").width())
+
+    },
+    templateHtml: function(html, states) {
+        html = html.replace(/\[em_([0-9]{3})\]/g, '<img src="images/face/$1.png" class="exp">');
+        var tempHtml = '<dl class="item self">' +
+            '<dt>' +
+            '<div class="name">诅咒龙后</div>' +
+            '</dt>' +
+            '<dd class="box">' +
+            '<div class="avar"><img src="images/avar.jpg"></div>' +
+            '<div class="text">' + html;
+        if (states == "loading") {
+            tempHtml += '<div class="loader"></div>'
+        }
+        if (states == "fail") {
+            tempHtml += '<div class="failPoint"></div>'
+        }
+        tempHtml += '</div>' +
+            '</dd>' +
+            '</dl>'
+        return tempHtml;
+    },
+    orient: function() {
+        if (window.orientation == 90 || window.orientation == -90) {
+            return "heng";
+        } else if (window.orientation == 0 || window.orientation == 180) {
+            return "shu";
+        }
+    }
+}
+</script>

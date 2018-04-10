@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+    window.PointerEvent = undefined
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="roleBox">
+            <div class="replyBox">
+                <div class="replyList">
+                    <div class="replyItem">
+                        <div class="replyHead">
+                            <div class="f-fl">
+                                <img src="images/avar.jpg" alt="" class="avar">
+                                <div class="avarInfo">
+                                    <span>yonghuming</span>
+                                    <aside>级别:学徒 威望:1 发帖:350</aside>
+                                </div>
+                            </div>
+                            <div class="f-fr report">
+                                举报
+                            </div>
+                        </div>
+                        <div class="replyBody">
+                            <div class="pageimgList" style="width: 50%;">
+                                <div class="item" style="background: url(&quot;images/adv1.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv2.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv1.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv2.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv1.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv2.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv1.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv2.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                                <div class="item" style="background: url(&quot;images/adv1.jpg&quot;) 0% 0% / cover; width: 30%; height: 106px;"></div>
+                            </div>
+                        </div>
+                        <div class="pageFoot">
+                            <time class="f-fl">1分钟前</time>
+                            <span class="system"><i class="iconfont i-apple"></i></span>
+                            <div class="f-fr love">
+                                <i class="ico i-message"></i>500
+                                <i class="ico i-love0"></i>0
+                            </div>
+                        </div>
+                        <div class="commentBox">
+                            <div class="commentList">
+                                <div class="pageInputBtn">
+                                    <p class="text"><span class="author">Sharinghappy : </span><span>还不错哦！！！</span></p>
+                                </div>
+                                <div class="pageInputBtn">
+                                    <p class="text"><span class="author">Sharinghappy : </span><span>还不错哦！！！</span></p>
+                                </div>
+                                <div class="pageInputBtn">
+                                    <p class="text"><span class="author">Sharinghappy : </span><span>还不错哦！！！</span></p>
+                                </div>
+                                <div class="pageInputBtn">
+                                    <p class="text"><span class="author">Sharinghappy : </span><span>还不错哦！！！</span></p>
+                                </div>
+                                <div class="pageInputBtn">
+                                    <p class="text"><span class="author">Sharinghappy : </span><span>还不错哦！！！还不错哦！！！还不错哦！！！还不错哦！！！还不错哦！！！还不错哦！！！还不错哦！！！还不错哦！！！</span></p>
+                                </div>
+                            </div>
+                            <p class="moreBtn">查看更多<i class="iconfont i-moreicon"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="replyInput" style="display: block;bottom: 0px;">
+                <input placeholder="说点什么" class="replyText"></input>
+                <a href="javascript:;" class="replyBtn">回复</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<!-- 下拉刷新 -->
+<script src="js/iscroll.js"></script>
+<script src="js/main.js"></script>
+<script>
+$(function() {
+    Community.role(".replyBox");
+})
+</script>

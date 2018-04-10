@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../css/main.css">
+    <script>
+    window.PointerEvent = undefined
+    </script>
+</head>
+
+<body>
+    <div class="container">
+    </div>
+    <!-- 弹窗 -->
+    <!--     <div class="pop_tong_group pop_integralS overlay">
+        <a href="javascript:;" title="关闭弹窗" class="btn_pop_close"></a>
+        <div class="pop_tong_box">
+            <div class="ptong_title">提交成功</div>
+            <div class="order-title">订单提交成功</div>
+            <div class="order-btn">
+                <div class="btn btn_blue">取消</div>
+                <div class="btn btn_yellow">确定</div>
+            </div>
+        </div> -->
+    <!-- 弹窗 end-->
+    <div class="mask"></div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/main.js"></script>
+<script>
+$(function() {
+    $(".btn_pop_close,.mask").on("click", function() {
+        $('.overlay,.mask').hide()
+    })
+
+
+    // $("body").click(function() {
+    //     $.ajax({
+    //         url: 'http://devshop.youzu.com/sdk/car/del',
+    //         type: 'post',
+    //         data: { 'a': 1, 'b': 2 },
+    //         dataType: 'json',
+    //         success: function(data) {
+    //             $("body").orderPop({
+    //                 title: "昵称",
+    //                 subtitle: "同步游戏昵称",
+    //                 button: ["取消", "确认"]
+    //             });
+    //             console.log(data)
+    //         }
+    //     })
+    // })
+})
+
+$("body").dialog({
+    text: '提交成功',
+    autoclose: true,
+    icon: "ok"
+})
+// $("body").click(function() {
+//     $("body").orderPop({
+//         title: "昵称",
+//         subtitle: "同步游戏昵称",
+//         button: ["取消", "确认"]
+//     });
+// })
+</script>

@@ -1,0 +1,1856 @@
+@charset "UTF-8";
+html,
+body,
+.container {
+    width: 100%;
+    height: 100%;
+    background: $bg;
+    color: $fgrey;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+
+body {
+    -webkit-overflow-scrolling: touch;
+    word-wrap: break-word;
+
+    overflow: scroll;
+}
+
+a {
+    color: $fgrey;
+}
+
+li {
+    list-style: none;
+}
+
+.btn {
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none!important;
+}
+
+.f_l {
+    float: left;
+}
+
+.f_r {
+    float: right;
+}
+
+.tc {
+    text-align: center;
+}
+
+.f12 {
+    font-size: 12px;
+}
+
+.header {
+    background: url(#{$prefix}/images/header.jpg) no-repeat;
+    background-size: cover;
+}
+
+.btn-large {
+    display: inline-block;
+    width: 14rem;
+    height: 4rem;
+    background: $voteCur;
+    line-height: 4rem;
+    font-size: 16px;
+    color: $fgrey;
+    text-align: center;
+    outline: 0;
+}
+
+.btn-active {
+    background: $btnBlue;
+}
+
+.row {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+}
+
+.col {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.btn-grey {
+    background: $btngrey;
+}
+
+.btn.btn-blue {
+    background: #4f99fe;
+}
+
+.btn-mid {
+    text-align: center;
+    background: #9b9b9b;
+    margin: 30px auto 10px;
+    width: 19rem;
+    display: block;
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 0;
+}
+
+
+
+time,
+aside {
+    font-size: 12px;
+}
+
+.forumType {
+    float: left;
+    img {
+        width: 16px;
+    }
+}
+
+.fblue {
+    color: $fblue;
+}
+
+.nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid $navbc;
+    z-index: 99;
+    position: relative;
+    .navItem {
+        -webkit-flex: 1;
+        -webkit-box-flex: 1;
+        flex: 1;
+        text-align: center;
+        line-height: 3.4rem;
+        color: $fgrey;
+        position: relative;
+        margin-bottom: -1px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+        background: $navbg;
+        .pipe {
+            width: 1px;
+            height: 2.2rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0.6rem;
+        }
+    }
+    .navItem:nth-last-child(1) .pipe {
+        display: none;
+    }
+    .navItem.cur {
+        @include curStatus();
+    }
+}
+
+.dialogBox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    background: #fafafa;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    z-index: 10;
+    background: $bg;
+}
+
+.dialogBox.in {
+    left: 0;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+}
+
+.padding {
+    padding: 15px;
+    @include clearfix();
+}
+
+.mainTit {
+    color: $fblue;
+    border-left: 2px solid $fblue;
+    padding-left: 6px;
+    font-size: 16px;
+}
+
+.sKey {
+    margin: 0.633333rem 0 0;
+    padding-bottom: 0.633333rem;
+    @include clearfix();
+    border-bottom: 1px solid #ededed;
+    li {
+        float: left;
+        padding: 0.2rem 1rem;
+        text-align: center;
+        background: $secondBg;
+        border: 1px solid $bc;
+        border-radius: 3px;
+        margin: 0 6px 6px 0;
+        line-height: 2.083333rem;
+        color: $firstColor;
+    }
+}
+
+.sHistory {
+    .sHisItem {
+        position: relative;
+        line-height: 2.8rem;
+        border-bottom: 1px solid $bc;
+        padding: 0.433333rem 0;
+    }
+    p {
+        padding-left: 3.116667rem;
+        color: $fgrey;
+        font-size: 14px;
+    }
+    .sHisClear {
+        text-align: center;
+        color: $fblue;
+        margin-top: 1.0rem;
+    }
+}
+
+.mainBox {
+    @include clearfix();
+}
+
+.i-closeImg {
+    position: absolute;
+    right: -8px;
+    top: -9px;
+    background: url(#{$prefix}/images/closeImg.png) no-repeat center center;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+}
+
+.searchBar {
+    position: relative;
+    border: 1px solid #cacaca;
+    width: 60%;
+    height: 2rem;
+    margin-top: 0.7rem;
+    border-radius: 50px;
+    @include center-block();
+    input {
+        border: 0;
+        width: 80%;
+        height: 1.666667rem;
+        position: absolute;
+        left: 2.75rem;
+        top: 0.25rem;
+        font-size: 1.25rem;
+        outline: 0;
+    }
+}
+
+.avar {
+
+    .avarMask {
+        background: url(#{$prefix}/images/skin/#{$url}/avarmask.png);
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-size: cover;
+    }
+    img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 999px;
+    }
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    float: left;
+    margin-right: 1rem;
+    overflow: hidden;
+}
+
+img.avar,
+img.voimg {
+    border-radius: 999px;
+}
+
+.voimg {
+    position: relative;
+    img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 999px;
+    }
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0px;
+    left: 6px;
+    overflow: hidden;
+    .voimgMask {
+        background: url(#{$prefix}/images/vomask.png);
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: cover;
+    }
+}
+
+.avarInfo {
+    display: inline-block;
+    color: $firstColor; // margin-top: 4px;
+    line-height: 22px;
+
+    .avarGroup {
+        color: $btngrey;
+        margin-top: 0.333333rem;
+    }
+    .avarName-new {
+        color: $firstColor;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 90px;
+        font-size: 12px!important;
+    }
+    time {
+        padding-left: .3rem;
+    }
+    .grade {
+        color: $firstColor;
+    }
+    .replyName {
+        display: block;
+    }
+    p {
+        span {
+            font-size: 12px;
+            color: $firstColor;
+        }
+    }
+}
+
+.forumBox {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden; // .icon-top {
+    //     color: $fred;
+    //     border: 1px solid $fred;
+    //     float: left;
+    //     padding: 0 4px;
+    //     border-radius: 3px;
+    // }
+    .i-upDown {
+        float: right;
+        line-height: 25px;
+        height: 25px;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        margin-right: 10px;
+    }
+    .topOpt {
+        @include clearfix();
+        padding-bottom: 0.4rem;
+        padding-left: 15px;
+        border-bottom: 1px solid $bc;
+    }
+    .topItem {
+        border-top: 1px solid $bc;
+        line-height: 3.3rem;
+        padding-left: 15px;
+        @include singleline-ellipsis;
+    }
+    .forumNav {
+        margin-bottom: 1.0rem;
+        @include clearfix();
+        ul {
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            background: $oddbg;
+            border-top: 2px solid $bc;
+            border-bottom: 1px solid $bc;
+        }
+        li {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            float: left;
+            text-align: center;
+            line-height: 2.75rem;
+            height: 2.75rem;
+            color: #161616;
+        }
+    }
+    time,
+    aside {
+        color: $firstColor;
+    }
+    .forumList {
+        display: none;
+    }
+    .forumList:nth-child(1) {
+        display: block;
+    }
+}
+
+.forumHead {
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    @include clearfix();
+    .f-fr {
+        color: $fgrey;
+    }
+}
+
+.forumText {
+    height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.forumBody {
+    @include clearfix();
+    padding-bottom: 1.25rem;
+    word-wrap: break-word;
+    word-break: normal;
+    img {
+        max-width: 100%;
+    }
+    .class {
+        // color: #126ED3;
+        margin: 0 4px;
+        float: left;
+    }
+}
+
+.forumTit {
+    width: 80%;
+    height: 85px;
+}
+
+.forumImg {
+    width: 60px;
+    margin-top: 10px;
+    overflow: hidden;
+    vertical-align: top;
+    .forumVideo {
+        margin: 0.833333rem 0.833333rem 0 0;
+    }
+    em {
+        display: block;
+        width: 60px!important;
+        max-height: 60px;
+        position: relative;
+    }
+}
+
+.f-fl {
+    float: left;
+}
+
+.f-fr {
+    float: right;
+}
+
+.topList {
+    border-bottom: 4px solid $bc;
+}
+
+.noborBot {
+    border-bottom: 0!important;
+}
+
+.forumItem {
+    overflow: hidden;
+    padding: 0 15px;
+    border-bottom: 1px solid $bc;
+    margin-bottom: 1rem;
+
+    .forumVideo {
+        display: inline-block;
+        img {
+            height: 8.5rem;
+        }
+    }
+    .iconBox {
+        color: $firstColor;
+        font-size: 12px;
+        .f-fl {
+            margin-left: 5px;
+        }
+    }
+}
+
+
+.loadingIco {
+    background: url(#{$prefix}/images/loading.gif) no-repeat;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    background-size: cover;
+}
+
+.pageBox {
+    .pageMain {
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+    }
+    .pageItem {
+        padding: 0 15px;
+        @include clearfix();
+    }
+    .love .iconfont {
+        margin-left: 1.666667rem;
+    }
+    .avarBox {
+        img {
+            width: 38px;
+            margin-left: 6px;
+            height: 16px;
+        }
+    }
+}
+
+.pageimgList {
+    overflow: hidden;
+    @include clearfix();
+    .item {
+        margin: 0.6rem 0.6rem 0 0;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        height: 20%;
+    }
+    img {
+        max-width: 70%;
+        margin: 0.6rem 0.6rem 0 0;
+    }
+}
+
+.videoBox {
+    .pageMain {
+        top: 0;
+    }
+    .videoPlay {
+        width: 100%;
+        height: 210px;
+        margin-bottom: 1rem;
+    }
+}
+
+.replyInput {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3.75rem;
+    background: #fff;
+    border: 1px solid #ececea;
+    display: none;
+    z-index: 20;
+    .replyText {
+        width: 85%;
+        height: 3.75rem;
+        padding: 0 10px;
+        border: 0;
+        outline: 0;
+        text-align: left;
+    }
+    .replyBtn {
+        position: absolute;
+        right: 12px;
+        bottom: 7px;
+        padding: 0 10px;
+        height: 2.5rem;
+        background: $forange;
+        border: 0;
+        border-radius: 3px;
+        color: #fff;
+        text-align: center;
+        line-height: 2.5rem;
+    }
+}
+
+.pageFoot {
+    overflow: hidden;
+    @include clearfix();
+    time,
+    .love {
+        line-height: 2.816667rem;
+        height: 2.816667rem;
+        margin-right: 0.433333rem;
+        color: $firstColor;
+    }
+}
+
+.pageHead {
+    overflow: hidden;
+    margin-bottom: 0.833333rem;
+    @include clearfix();
+}
+
+.pageBody {
+    @inlcude clearfix();
+    overflow: hidden;
+    margin-bottom: 2.083333rem;
+    word-wrap: break-word;
+    img {
+        max-width: 100%;
+    }
+}
+
+.showImg {
+    margin: 0.833333rem 0;
+    display: block;
+    max-width: 100%;
+}
+
+.pr {
+    position: relative;
+}
+
+.countNum {
+    position: absolute;
+    right: 6px;
+    bottom: -30px;
+    color: $fgrey;
+    z-index: 999;
+}
+
+.replyOpt {
+    height: 34px;
+    line-height: 34px;
+    @include clearfix();
+    padding: 0 1rem;
+    background: $thirdBg;
+    border-left: 6px solid $homeBoxBorderColor;
+    color: $fgrey;
+}
+
+.replyOnly {
+    background: $navbc;
+    border: 1px solid $homeBoxBorderColor;
+    padding: 4px 8px;
+    margin-left: 5px;
+}
+
+.i-replym {
+    color: $forange;
+}
+
+.reNum {
+    margin-left: 0.416667rem;
+}
+
+.louzhu {
+    background: #fff;
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin-left: 0.833333rem;
+}
+
+.timeSort {
+    line-height: 2.25rem;
+}
+
+.replyList {
+    @include clearfix();
+    .replyHead {
+        @include clearfix();
+        margin-bottom: 0.833333rem;
+    }
+    .replyFoot {
+        @include clearfix();
+    }
+}
+
+.replyItem {
+    padding: 15px;
+    border-bottom: 1px solid $bc;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.replyItem:nth-child(even) {
+    background: $oddbg;
+    .avarMask {
+        background: url(#{$prefix}/images/avaroddmask.png);
+        background-size: cover;
+    }
+}
+
+.replyItem:nth-child(odd) {
+    .commentBox {
+        background: $oddbg;
+    }
+}
+
+.rotate {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+@keyframes gogogo {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(180deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+@-webkit-keyframes gogogo {
+    0% {
+        -webkit-transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateX(-50%) rotate(180deg);
+    }
+    100% {
+        -webkit-transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.loadRotate {
+    animation: gogogo 1s infinite linear;
+    -webkit-animation: gogogo 1s infinite linear;
+}
+
+.expBox {
+    padding: 0.25rem;
+}
+
+.commentBox {
+    background: $bg;
+    padding: 0.666667rem;
+    padding-bottom: 0.333333rem;
+    @include clearfix();
+    .author {
+        color: #2087f0;
+    }
+    .moreBtn {
+        float: right;
+        font-size: 13px;
+        color: $fgrey;
+    }
+    .i-moreicon {
+        color: $fgrey;
+        font-size: 12px;
+        vertical-align: top;
+        display: inline-block;
+    }
+    .text {
+        // margin-left: 3.3rem;
+        position: relative;
+        min-height: 2.083333rem;
+        margin-bottom: 0.233333rem;
+        word-wrap: break-word;
+        word-break: normal;
+    }
+    .pageInputBtn {
+        position: relative;
+    }
+}
+
+.line-btn-delete {
+    position: absolute;
+    right: 15px;
+    width: 98px;
+    height: 144px;
+    z-index: 1;
+    display: table;
+    span {
+        width: 100%;
+        height: 100%;
+        background: #C9252A;
+        border: none;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.line-normal-wrapper {
+    display: inline-block;
+    float: left;
+    background: $bg;
+    z-index: 2;
+    position: relative;
+}
+
+.personalBox {
+    .forumList {
+        padding-top: 15px;
+        position: relative;
+        min-height: 335px;
+    }
+}
+
+
+
+.draftBox {
+    .item {
+        padding: 15px!important;
+        line-height: 21px!important;
+        word-wrap: break-word;
+        border-bottom: 1px solid $bc;
+    }
+    .item {
+        img {
+            width: 2.333333rem;
+            height: 2.333333rem;
+        }
+    }
+    p {
+        margin-bottom: 5px;
+    }
+    .tit {
+        font-weight: bold;
+    }
+}
+
+.roleBox {
+    .itemOpt {
+        @include clearfix();
+        color: $fgrey;
+        span {
+            color: $fgrey;
+            padding: 0.8rem;
+        }
+    }
+    .article-content {
+        background: $bg;
+    }
+
+    .forumBody {
+        border: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        height: 58px;
+    }
+    .forumItem {
+        border-bottom: 1px solid $bc;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    .main0,
+    .main1,
+    .main2,
+    .main3,
+    .main4,
+    .main5,
+    .main6,
+    .main7,
+    .main8,
+    .main9 {
+        top: 3.5rem;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding-top: 1rem;
+    }
+    .item {
+        line-height: 4.1rem;
+        padding: 0 15px;
+        @include clearfix();
+        border-bottom: 1px solid $bc;
+        span {
+            margin-right: 1rem;
+        }
+    }
+    .levelRule {
+        border-top: 5px solid $bc;
+        padding: 15px;
+        img {
+            height: 20px;
+        }
+    }
+    table {
+        width: 90%;
+        margin-top: 0.416667rem;
+    }
+    th {
+        text-align: left;
+        font-weight: normal;
+        background: $bc;
+    }
+    th,
+    td {
+        border: 1px solid $bc;
+        padding: 0.333333rem;
+    }
+}
+
+.collectScroll,
+.serverScroll,
+.levelScroll,
+.draftScroll,
+.perBox,
+.replyBox,
+.searchBefore,
+.searchAfter,
+.newsDetail,
+.videoItem {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.levelScroll {
+    top: 0;
+}
+
+.searchBefore,
+.searchAfter {
+    left: 1rem;
+    right: 1rem;
+}
+
+.newsDetail {
+    left: 15px;
+    right: 15px;
+    img {
+        max-width: 100%!important;
+        max-height: 100%!important;
+    }
+}
+
+.videoItem {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+}
+
+.videoImg,
+.picImg {
+    height: 93px;
+}
+
+.replyBox {
+    bottom: 4.166667rem;
+}
+
+.serverList {
+    line-height: 3.333333rem;
+    p {
+        border-bottom: 1px solid $bc;
+        padding: 0 1rem;
+        line-height: 4.1rem;
+    }
+    .gameName {
+        width: 3.333333rem;
+        height: 3.333333rem;
+        border-radius: 999px;
+        background-clip: padding-box;
+        margin-right: 0.833333rem;
+    }
+    .level {
+        float: right;
+    }
+    .group {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        .icon {
+            width: 4rem;
+            height: 2.5rem;
+            display: block;
+        }
+    }
+}
+
+.dataWrap .item p {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+}
+
+.i-level {
+    font-size: 14px;
+    color: $forange;
+}
+
+.checkBox {
+    width: 50%;
+    margin: 1.666667rem auto 0;
+    @include clearfix();
+    label {
+        margin: 0 0.833333rem 0.833333rem 0;
+        width: 50%;
+        input {
+            margin-right: 0.5rem;
+        }
+    }
+    textarea {
+        width: 100%;
+        height: 5.833333rem;
+        border: 1px solid $bc;
+    }
+    .reportList {
+        margin-top: 1.166667rem;
+        p {
+            background: $secondBg;
+            margin-bottom: 10px;
+            width: 60%;
+            padding: 4px;
+            position: relative;
+            text-indent: 21px;
+            border-radius: 3px;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: #b8b8b8;
+            display: block;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+            position: absolute;
+            left: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+        }
+        p.cur {
+            background: $forange;
+            color: #fff;
+            transition: all .1s;
+            .dot {
+                background: #fff;
+            }
+        }
+    }
+}
+
+.s-userAvar {
+    width: 4.0rem;
+    height: 4.0rem;
+    display: inline-block;
+    border-radius: 999px;
+    background-clip: padding-box;
+}
+
+.minDialog {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 22.0rem;
+    height: 14.5rem;
+    background: $bg;
+    z-index: 10;
+    display: none;
+    padding: 1.25rem 4.166667rem;
+    border-radius: 6px;
+    .btnList {
+        text-align: center;
+    }
+}
+
+.minDialog .title {
+    text-align: center;
+    margin-bottom: 1.666667rem;
+}
+
+.minDialog .inputBox {
+    width: 100%;
+    border: 1px solid $bc;
+    border-radius: 3px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-indent: 0.833333rem;
+    background: #fff;
+    box-shadow: none;
+    outline: 0;
+    input {
+        color: #636363;
+        box-shadow: none;
+        outline: 0;
+        border: 0;
+        height: 2.2rem;
+        line-height: 2.2rem;
+    }
+}
+
+.minDialog .btnList span {
+    width: 5.0rem;
+    height: 2.5rem;
+    display: inline-block;
+    background: #fff;
+    color: #636363;
+    text-align: center;
+    line-height: 2.5rem;
+    border: 1px solid $bc;
+    margin: 1.25rem 0.833333rem 0 0;
+}
+
+.minDialog .btnList .sureBtn {
+    background: #fe6700;
+    color: #fff;
+    border: 0;
+}
+
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.minDialog.in {
+    display: block;
+}
+
+.in~.mask {
+    display: block;
+}
+
+.emoji {
+    width: 2.333333rem;
+    height: 2.333333rem;
+}
+
+.replyBox {
+    .replyTopic,
+    .replyCommit {
+        text-align: center;
+        line-height: 3rem;
+        color: #2087f0;
+        font-size: 14px;
+        border-bottom: 1px solid $bc;
+    }
+    .replyCommit {
+        color: $fgrey;
+        border: 0;
+    }
+    .pageFoot,
+    time {
+        /*@include clearfix();*/
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .replyItem:nth-child(odd) {
+        background: none;
+    }
+}
+
+.collectBox {
+    .forumItem {
+        padding-bottom: 0;
+    }
+}
+
+.nomore {
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    line-height: 2.5rem;
+    color: $fgrey;
+    display: none;
+    span {
+        margin-left: 2.0rem;
+    }
+}
+
+.morenone {
+    text-align: center;
+    color: $fgrey;
+    line-height: 30px;
+    height: 30px;
+    padding: 50px 0;
+}
+
+.m1 {
+    padding-bottom: 10rem;
+    line-height: 100px;
+}
+
+.nomore {
+    bottom: -0.416667rem;
+}
+
+.loadingBot,
+.loadingTop {
+    @include clearfix();
+    @include center-block();
+    width: 4rem;
+    height: 2.4rem;
+    opacity: 0;
+    height: 0;
+    transition: all .6s;
+    -webkit-transition: all .6s;
+}
+
+.loadFade {
+    opacity: 1;
+    transition: all .6s;
+    -webkit-transition: all .6s;
+    height: auto;
+}
+
+.loadingFluid {
+    @include center-block();
+    width: 100%;
+    height: 2.4rem;
+    float: left;
+    .i-loading {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+.nomoreFluid {
+    @include center-block();
+    width: 100%;
+    height: 2.4rem;
+    float: left;
+    text-align: center;
+    color: $fgrey;
+}
+
+.i-loading {
+    background: url(#{$prefix}/images/loading2.gif);
+    width: 4.0rem;
+    height: 2.4rem;
+    background-size: cover;
+    display: inline-block;
+}
+
+.i-loading2 {
+    position: absolute;
+    font-size: 23px;
+    background: url(#{$prefix}/images/loading.gif);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.searchBox {
+    .searchAfter {
+        display: none;
+        em {
+            color: #ff0000;
+        }
+    }
+    .searchTag {
+        line-height: 3rem;
+        border-bottom: 1px solid $bc;
+        margin-bottom: 0.833333rem;
+    }
+    .key {
+        color: $fblue;
+    }
+    .forumItem {
+        border-bottom: 1px solid $bc;
+        margin-bottom: 1rem;
+    }
+}
+
+.uploadAvarBox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    #drag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 3.666667rem;
+        z-index: 20;
+    }
+    .rect {
+        position: absolute;
+        left: 50%;
+        top: 12%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        width: 190px;
+        height: 190px;
+        border: 3px solid #fff;
+    }
+    .uaBtn {
+        z-index: 30;
+        background: #1f1f1f;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3.666667rem;
+        span {
+            line-height: 3.666667rem;
+            width: 50%;
+            display: block;
+            float: left;
+            text-align: center;
+        }
+        .cancelBtn {
+            color: #fff;
+        }
+        .okBtn {
+            color: #eb656e;
+        }
+    }
+}
+
+.uploadAvarOpt {
+    z-index: 999;
+    position: absolute;
+}
+
+.playBtn {
+    background: url(#{$prefix}/images/playbtn.png);
+    width: 3.583333rem;
+    height: 3.583333rem;
+    background-size: cover;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.reportBox {
+    .countNum {
+        bottom: 6px;
+    }
+}
+
+.dataBox {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+@-webkit-keyframes change {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes change {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.version {
+    color: $fgrey;
+    text-align: center;
+    margin: 100px 0 20px;
+}
+
+.greybg {
+    background: $thirdBg;
+}
+
+.shareBox {
+    .headerX {
+        background: #24242c;
+    }
+    html.indexPage,
+    .indexPage body,
+    .indexPage .wraper {
+        height: 100%;
+        position: relative;
+    }
+    .headerX {
+        width: 100%;
+        height: 6rem;
+        position: fixed;
+        top: 0;
+        left: 0%;
+        z-index: 9;
+    }
+    .gameInfo {
+        padding: 1rem 0 0 1rem;
+        color: #FFF;
+    }
+    .gameInfo img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 6px;
+    }
+    .gameInfo .gameName {
+        line-height: 1.8rem;
+        padding-left: 1rem;
+        padding-top: 6px;
+    }
+    .gameInfo .gameName .titleN {
+        font-size: 1.6rem;
+        margin-bottom: 4px;
+    }
+    .gameInfo .gameName em {
+        font-size: 1.2rem;
+    }
+    .btn_download {
+        width: 8rem;
+        height: 2.6rem;
+        background: url(#{$prefix}/images/btndown.png);
+        text-indent: -9999px;
+        margin: 2rem 1rem 0 0;
+        font-size: 3rem;
+        background-size: cover;
+    }
+    .shareContent {
+        position: relative;
+    }
+    .btn-more {
+        width: 18rem;
+        height: 3rem;
+        line-height: 3rem;
+        background: $forange;
+        border-radius: 6px;
+        text-align: center;
+        color: #fff;
+        font-size: 1.4rem;
+        @include center-block();
+        margin: 1rem auto;
+    }
+}
+
+.shareContent,
+.shareBox {
+    height: 100%;
+    .pageItem {
+        margin-top: 8rem;
+    }
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+.promptBox {
+    width: 270px;
+    padding: 20px;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    z-index: 99;
+    background: url(#{$prefix}/images/frPopBg.png);
+    background-size: 100% 100%;
+    border-radius: 3px;
+    .inner {
+        padding: 1rem 3rem 2rem;
+    }
+    .title {
+        text-align: center;
+        font-size: 14px;
+        color: $fgrey;
+        background: url(../images/frPopTit.png) no-repeat center;
+        background-size: 100% 100%;
+        height: .66rem;
+        line-height: .66rem;
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 13px;
+        color: $fgrey;
+        margin-top: 0.5rem;
+    }
+    .input {
+        margin-top: 1rem;
+        @include clearfix();
+        input[type="text"] {
+            width: 100%;
+            background: $bg;
+            border: 1px solid $bc;
+            box-shadow: none;
+            outline: 0;
+            -webkit-appearance: none;
+            height: 32px;
+            color: $fgrey;
+            padding: 0 5px;
+            box-sizing: border-box;
+        }
+        label {
+            position: relative;
+            line-height: 2rem;
+            float: left;
+            margin: 0px 25px;
+        }
+        .i-radio {
+            width: 24px;
+            height: 24px;
+            display: block;
+            float: left;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url(#{$prefix}/images/Radio-button.png);
+            background-size: cover;
+        }
+        label.on {
+            .i-radio {
+                background: url(#{$prefix}/images/Radio-button-active.png);
+                background-size: cover;
+            }
+        }
+        input[type="radio"] {
+            opacity: 0;
+            float: left;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+    }
+    .buttonS {
+        line-height: 33px;
+    }
+    .f_l {
+        width: 60px;
+        height: 33px;
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        background: url(../images/fr-btn1.png) no-repeat;
+        background-size: 100% 100%;
+        margin-left: 11.5rem;
+    }
+    .f_r {
+        width: 60px;
+        height: 33px;
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        background: url(../images/fr-btn2.png) no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.errorBox {
+    background: url(#{$prefix}/images/error_blank.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    left: 22%;
+    top: 30px;
+    bottom: 80px;
+    right: 22%;
+    z-index: 2;
+    color: $firstColor;
+}
+
+.errorInfo {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    display: table;
+}
+
+.maskbg {
+    background: $bg;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.main1,
+.main2,
+.main3,
+.main4,
+.main5,
+.main6,
+.main7,
+.main8,
+.main9,
+{
+    display: none;
+}
+
+div[class^="main"] {
+    @include clearfix();
+    position: absolute;
+    z-index: 1;
+    top: 4.5rem;
+    bottom: 0;
+    right: 15px;
+    left: 15px;
+    overflow: hidden;
+}
+
+.videoLoading {
+    height: 120px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #9b9b9b;
+    opacity: .8;
+}
+
+.scrollBox {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.bestTit {
+    .tit {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        top: 50%;
+        font-size: 12px;
+        color: #65615e;
+        font-weight: bold;
+    }
+}
+
+.btn-posting {
+    background: url(#{$prefix}/images/posting.png);
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 999;
+    background-size: cover;
+}
+
+.loadingBoxMain {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5, 0.5);
+    }
+}
+
+.clz_icon_flag {
+    height: 1px;
+}
+
+.input_mask {
+    display: none;
+    .input_box {
+        min-height: 100px;
+        background-color: #fff;
+        z-index: 100005;
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+        -webkit-transition: all .1s ease-in;
+        transition: all .1s ease-in;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        &.input_box_show {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    .ipt-top {
+        border: none;
+        width: 100%;
+        height: 100px;
+    }
+}
+
+
+.pop_input{
+    // visibility:hidden;
+    display: none;
+}
+
+.pop_input_mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 3
+}
+
+.pop_input_box {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    z-index: 11111;
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+    &.pop_input_box_show {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.pop_input_textarea {
+    display: block;
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    height: 80px;
+    vertical-align: top;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    color: #2e3132;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+ /* 弹窗 遮罩 */
+.pop_mark {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 80;
+    display: none;
+}
+
+ /* 弹窗  */
+.pop_tong_group {
+    position: fixed;
+    z-index: 120;
+    padding: 0.2rem 0rem 0rem 0rem ;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;   
+    border: 2px solid $popLine;   
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($popBg1),   to($popBg2)); 
+    box-shadow: $popying 0 0  7px 2px ;   
+    .pop_up_bg{
+        position: absolute; z-index: 88;  width: 100%; height: 0.2rem; top:0;
+        background: url(#{$prefix}/images/pop_updi_bg.png)  no-repeat 50% 0 ;
+        background-size: 3.88rem 0.17rem;
+    }
+    .btn_pop_close{
+        position: absolute; z-index: 88;  display: inline-block; width: 0.74rem; height: 0.71rem; right:-0.12rem;top:-0.07rem;
+        background: url(#{$prefix}/images/pop_btn_colse.png)  no-repeat 50% 0 ;
+        background-size: 0.74rem 0.71rem;
+    }
+    .pop_tong_box {  
+        padding: 0rem 0.23rem 0rem 0.23rem ; 
+        height: 100%;
+        font-size:0.24rem; 
+        color: $uerlan_color; 
+        overflow-y:auto;
+    }
+    .ptong_title{
+        margin: 0.2rem 0rem 0.1rem 0rem ; 
+        width: 100%; 
+        height: 0.38rem; 
+        line-height: 0.38rem; 
+        text-align: center;
+        font-size:0.28rem; 
+        color: $fgrey; 
+        background: url(#{$prefix}/images/pop_title_bg.png)  no-repeat 50% 50% ;
+        background-size: 5.11rem 0.28rem;
+    }
+    .ptong_neirong {
+    }
+} 

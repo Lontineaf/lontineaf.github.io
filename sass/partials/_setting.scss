@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.settingList {
+    .roleItem {
+        line-height: normal;
+        padding: 1rem 1.25rem;
+        overflow: hidden;
+        background: $bg;
+        .sysname {
+            position: static;
+            float: right;
+            padding: 0 25px 0 0;
+            max-width: 70%;
+        }
+        .i-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+        }
+    }
+    .bt {
+        margin-bottom: 10px;
+    }
+}

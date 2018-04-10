@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="UTF-8">
+    <title>订单信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+    window.PointerEvent = undefined
+    </script>
+    </head>
+
+    <body style="visibility: hidden;">
+    <div class="container">
+      <div class="benefitsBox scrollBox forumBox">
+        <div> 
+          
+          <!-- 订单导航   -->
+          <section class="OrderMenuBox" >
+            <ul class="GifuMenuZu OrderMenuZu">
+              <li class="current"><a  href="user_order.html"  title="">全部 </a></li>
+              <li><a  href="user_order_2.html"  title="">未发货 </a></li>
+              <li><a  href="user_order_3.html"  title="">待收货 </a></li>
+            </ul>
+          </section>
+          <!-- 订单导航 end   --> 
+          
+          <!-- 订单内容显示   -->
+          <section class="OrderListBox"  	> 
+            <!--小组-->
+            <div class="OrderArtZu" style="display:block; ">
+              <ul class="OrderXiZu clearfix">
+                <li>
+                  <p class="ord_pic" ><img src="images/img3.jpg" class="ord_tus" alt=""></p>
+                  <p class="ord_name" >《少年三国志》长柄伞</p>
+                  <p class="ord_date" >2017-02-04</p>
+                  <span class="ord_act">未发货</span> <a  href="user_order_info.html"  title="查看"  class="btn_see_chakan" >查看</a></li>
+                <li>
+                  <p class="ord_pic" ><img src="images/img3.jpg" class="ord_tus" alt=""></p>
+                  <p class="ord_name" >年三国志》长柄伞年三国志 柄伞</p>
+                  <p class="ord_date" >2017-02-04</p>
+                  <span class="ord_act">未发货</span> <a  href="user_order_info.html"  title="查看"  class="btn_see_chakan" >查看</a></li>
+                <li>
+                  <p class="ord_pic" ><img src="images/img3.jpg" class="ord_tus" alt=""></p>
+                  <p class="ord_name" >《少年三国志》长柄伞</p>
+                  <p class="ord_date" >2017-02-04</p>
+                  <span class="ord_act">未发货</span> <a  href="user_order_info.html"  title="查看"  class="btn_see_chakan" >查看</a></li>
+                <li>
+                  <p class="ord_pic" ><img src="images/img3.jpg" class="ord_tus" alt=""></p>
+                  <p class="ord_name" >《少年三国志》长柄伞</p>
+                  <p class="ord_date" >2017-02-04</p>
+                  <span class="ord_act">已发货</span> <a  href="user_order_info.html"  title="查看"  class="btn_see_chakan" >查看</a></li>
+                <li>
+                  <p class="ord_pic" ><img src="images/img3.jpg" class="ord_tus" alt=""></p>
+                  <p class="ord_name" >《少年三国志》长柄伞</p>
+                  <p class="ord_date" >2017-02-04</p>
+                  <span class="ord_act">已发货</span> <a  href="user_order_info.html"  title="查看"  class="btn_see_chakan" >查看</a></li>
+               
+              </ul>
+              <div class="no_more_info">没有更多了</div>
+            </div>
+            <!--小组 end --> 
+            
+          </section>
+          <!-- 订单内容显示 end   --> 
+        </div>
+      </div>
+    </div>
+</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+
+$(function() {
+    Community.pageRem();
+      setTimeout(function(){
+        Community.isscrollFunc(".forumBox");
+      },200)
+     
+//    $(".GifuMenuZu li").tab(".GifuArtZu");   
+
+ 
+ 
+})
+</script>
+</html>

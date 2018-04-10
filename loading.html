@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+    <style>
+    * {
+        margin:0;
+        padding:0;
+    }
+    html {
+        font-size: 62.5%;
+    }
+    
+    html,
+    body,
+    .container {
+        width: 100%;
+        height: 100%;
+        background: #fff9e3;
+
+    }
+    
+    .loadingPage {
+        background: url(images/loading-2.gif);
+        width: 8rem;
+        height: 8rem;
+        position: absolute;
+        background-size: cover;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loadingPage"></div>
+    </div>
+</body>

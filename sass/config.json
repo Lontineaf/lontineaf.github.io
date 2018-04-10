@@ -1,0 +1,10 @@
+[
+  {
+    "input":"/main.scss",
+    "output":"main.css"
+  },
+  {
+    "input":"/home.scss",
+    "output":"home.css"
+  }
+]

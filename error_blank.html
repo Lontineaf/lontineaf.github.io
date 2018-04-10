@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/1.5 arial, "\5FAE\8F6F\96C5\9ED1", sans-serif;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    color: #aaa;
+}
+
+.errorBox {
+    background: url(images/skin/style1/error_blank.png) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    left: 22%;
+    top: 30px;
+    bottom: 80px;
+    right: 22%;
+}
+
+.container {
+    background: #fff;
+}
+
+.errorInfo {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    display: table;
+}
+
+html,
+body,
+.container {
+    height: 100%;
+}
+
+@media screen and (orientation: portrait) {
+    .errorBox {
+        left: 10%;
+        top: 40%;
+        right: 10%;
+            bottom: 17%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+    }
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="errorBox">
+            <p class="errorInfo">还没有内容</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    document.onclick = function(){
+        yzplay.reload()
+    };
+</script>

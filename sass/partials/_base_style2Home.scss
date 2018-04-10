@@ -1,0 +1,90 @@
+@charset "UTF-8";
+html {
+    font-size: 50px;
+}
+
+@media screen and (min-width:320px) {
+    html {
+        font-size: 42.66px;
+    }
+}
+
+@media screen and (min-width:360px) {
+    html {
+        font-size: 48px;
+    }
+}
+
+@media screen and (min-width:375px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width:414px) {
+    html {
+        font-size: 55.20px;
+    }
+}
+
+$f28:14px;
+$f24:12px;
+$f22:11px;
+$f18:11px;
+$f16:9px;
+
+
+
+@import "../param/home_color.scss";
+// $fwhite:#eeeded; //默认白色
+// $fblue2:#515d6d; //时间、播放次数颜色
+// $fblue3:#a2adbf; //用户名、按钮、标题颜色
+// $fbrown:#d3ab70; //棕色字体
+// $newbg:#152130; //新闻背景色
+// $sbg:#2d374c; //标签背景色
+// $imgbc:#11233b; //轮播图边框
+// $bc:#253243; //整体描边颜色
+@import "../modules/all.scss";
+@import "../ventor/swiper.min.scss";
+@import "homev2.0.scss";
+@import "../param/home_image.scss";
+//消息图标40*29
+.personage-info {
+    //默认
+    .i-message0 {
+        background: url(#{$home_i-message0}) center center no-repeat;
+        background-size: cover;
+    } //新消息
+    .i-message1 {
+        background: url(#{$home_i-message1}) center center no-repeat;
+        background-size: cover;
+    }
+}
+
+
+//动态消息图标 39*28
+.icon_peng {
+    width: .39rem;
+    background: url(#{$home_icon_peng}) no-repeat;
+    float: left;
+    margin: .08rem 10px 0;
+    vertical-align: middle;
+    background-size: 100% 100%;
+    height: .28rem;
+}
+
+//家长监护工程图标
+.i-monitor {
+    background: url(#{$home_i-monitor}) no-repeat;
+    background-size: cover;
+}
+//查看更多
+.heroes_go_more {
+    a {
+        background: url(#{$home_heroes_go_more}) no-repeat;
+        background-size: cover;
+        display: block;
+        width: 100%;
+        height: 1.02rem;
+    }
+}

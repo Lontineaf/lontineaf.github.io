@@ -1,0 +1,106 @@
+@charset "UTF-8";
+.logBox {
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    input[type="text"],
+    input[type="password"] {
+        border: 1px solid #ededed;
+        width: 100%;
+        outline: none;
+        margin-bottom: 10px;
+        height: 34px;
+        line-height: 34px;
+        text-indent: 10px;
+        border-radius: 0;
+    }
+    .btn-log {
+        margin: 10px auto;
+    }
+    .btn-yzm {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #4f99fe;
+        border: 0;
+        outline: 0;
+        color: #fff;
+        height: 36px;
+        width: 86px;
+        border-radius: 0;
+        font-size: 12px;
+    }
+    .btn-yzm:disabled {
+        background: #d8d8d8;
+        color: #333;
+    }
+    .input-yzm[type="text"] {
+        width: 162px;
+    }
+    .opt {
+        @include clearfix();
+        font-size: 12px;
+        margin: 8px 0;
+    }
+    .type {
+        font-size: 12px;
+        p {
+            margin: 12px 0;
+            text-align: center;
+        }
+        .other {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+        .ot {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            img {
+                max-width: 100%;
+                max-height: 40px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+    }
+    input[type="checkbox"] {
+        margin-right: 6px;
+    }
+    .server {
+        color: #ff0000;
+        margin-left: 4px;
+    }
+    .picyz {
+        width: 75px;
+        height: 36px;
+        vertical-align: top;
+        float: right;
+    }
+}
+
+.protocolBox {
+    padding: 15px;
+    span {
+        color: #818d1b;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 30px;
+    }
+}
+.overseas {
+    background:url(#{$prefix}/images/overseas.png);
+    width: 100%;
+    height: 170px;
+    background-size: cover;
+}
+/* test内容 */
+.teset{
+    .asdf{}
+}
+
+ 

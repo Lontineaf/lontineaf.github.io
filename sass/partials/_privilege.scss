@@ -1,0 +1,377 @@
+/*
+      / \`\          __
+      |  \ `\      /`/ \
+      \_/`\  \-"-/` /\  \
+           |       |  \  |
+           (d     b)   \_/
+           /       \ 
+       ,".|.'.\_/.'.|.",
+      /   /\' _|_ '/\   \
+      |  /  '-`"`-'  \  |
+      | |             | |
+      | \    \   /    / |
+       \ \    \ /    / /
+        `"`\   :   /'"`youzu 特权服务
+            `""`""`    
+*/
+
+//Mixins
+@import "mixins";  
+@import "flexbox"; 
+
+//Variables
+//mixins 变量
+$legacy-support-for-ie: true !default;
+$inline-block-alignment: middle !default;
+
+//图片版本号
+$imgV: '?0';
+
+//雪碧图地址
+$imgPath : '../images/';
+$sprite: $imgPath + 'sprite_tq.png' + $imgV; 
+
+/* common */
+.marginB30 { margin-bottom: 0.3rem !important;}
+.marginT30 {margin-top: 0.3rem !important;}
+.marginT50 {margin-top: 0.5rem !important;}
+.pB130 { padding-bottom: 1.3rem;}
+.pT50 { padding-top: 0.50rem;}
+.alignCenter { text-align: center;}
+.borderT { border-top:1px solid $tedilan;}
+.borderNo { border: none !important;}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: $btngrey; }
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: $btngrey; }
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: $btngrey; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: $btngrey; }
+
+.button {display: block;height: 2.5rem; height: 0.8rem; border-radius: 0.04rem; text-align: center; line-height: 0.8rem; font-size: 0.3rem; color: $uerlan_color;border: 1px solid $tedilan;}
+.btn-default { background: none;}
+.btn-normal { background: $btnN; color: $fblue;}
+.btn-gray {background: none; border-color: $oddbg;}
+.color-h { color: $fblue;}
+.color-z { color: $frbrown;}
+/* 多选框 */
+.select_checkbox {
+  font-size: 0.3rem; color: $fgrey;@include clearfix();
+  div { 
+    float: left; margin-right: 0.20rem; cursor: pointer; @include css3(user-select,none);color: $btngrey;
+    i { color: $btngrey; font-size: 0.4rem; vertical-align: middle; margin-right: 0.1rem;}
+  }
+  div.active {
+    color: $fblue;
+    i { color: $fblue;}
+    i:before {content: "\e62f";}
+  }
+  div:last-child { margin: 0;}
+}
+
+/* 插件 */
+@import "dropzone"; //上传文件预览插件
+
+/* layout */
+.bgSize { background-size: 7.5rem 7.5rem !important;}
+.header_user {
+    height: 0.88rem; padding: 0 0.3rem;
+    &>.f_l {height: 0.88rem; @include display-flex(); @include flex-wrap-wrap(); @include align-items-center();}
+}
+.photo_user { width: 0.66rem; height: 0.66rem; @include css3(border-radius,50%); margin-right: 0.2rem;}
+.name_user { margin-right: 0.2rem; color: $fblue; font-size: 0.3rem;}
+.btn_eventQuery { font-size: 0.5rem; color: $fblue; line-height: 0.88rem;}
+
+/* tab */
+.tab_nav {
+    height: 0.7rem; background: $navbg; border:1px solid $navbc; border-width: 1px 0;
+    ul { @include display-flex();@include justify-content-space-around();}
+    li { text-align: center;height: 0.7rem; line-height: 0.7rem; font-size: 0.3rem; border-right: 2px solid $navbc; @include flex(1, 1, auto);}
+    li:last-child { border: none;}
+    li.current { background: url($imgPath + 'tab_cur.jpg' + $imgV) no-repeat 50% 0; background-size: 100% 100%; color: $curStatus_color;}
+}
+
+/* 特权列表 */
+.list_privilege {
+  display: none;
+  ul { padding: 0.3rem;}
+  li {
+    border: 1px solid $tedilan; background: $btnC; @include css3(border-radius,4px); margin-bottom: 0.3rem; position: relative;
+    & > a {@include display-flex();@include align-items-center(); padding: 0.2rem;}
+    p { 
+      color: $fblue; font-size: 0.48rem;
+      span { color: $uerlan_color; font-size: 0.24rem; display: block;}
+    }
+    &:hover,&:active { border-color: $btnBh;@include css3(box-shadow, 0 0 0.3rem 0.15rem #0b2c55 inset);}
+  }
+  i.iconfontYZ { color: $iconh; font-size: 1rem; text-align: right; padding-right: 0.6rem; width: 1.9rem; }
+}
+.list_privilege{
+  .small_list_pri {
+    @include display-flex();@include flex-wrap-wrap(); padding: 0.3rem 2.4%;
+    li{
+       text-align: center; @include flex(0, 1, 30%); margin: 0 1.6% 0.2rem 1.6%;box-sizing: border-box;
+      & > a { display: block;}
+      p { font-size: 0.24rem; color: $uerlan_color;}
+      &:hover,&:active { 
+        p {color: $curStatus_color;}
+      }
+    }
+    i.iconfontYZ  { padding: 0;}
+  }
+}
+/* 列表提示 */
+.tip_privilege {
+  background: $tipC; color: $tipTC; padding: 0.04rem 0.1rem 0.04rem 0.1rem; position: absolute; left: -0.1rem; top: 0.1rem; font-size: 0.16rem;
+  &:before,&:after {
+    content: ""; position: absolute; right: -0.16rem;
+  }
+  &:before {@include triangle (0.32rem, $tipC, down);top: 0;}
+  &:after {@include triangle (0.32rem, $tipC, up);bottom: 0;}
+}
+
+/* 客服热线 */
+.hotLine {
+  position: relative; padding: 0 5% 0.4rem 5%;@include display-flex();@include align-items-center(); overflow: hidden;
+    ul { padding-left: 0.72rem; width: 80%;@include flex(1, 1, 80%); }
+    li { 
+      border: 0.01rem solid $tedilan; width: 100%; height: 0.52rem; line-height: 0.52rem; @include css3(border-radius,0.04rem); font-size: 0.18rem; color: $btnCh; margin-bottom: 0.1rem; position: relative; background: $btnC;
+      i {}
+      em { color: $btnCh; font-size: 0.24rem; width: 1.28rem; height: 0.52rem; display: inline-block; background: url($sprite) no-repeat 0 0;@extend .bgSize; text-align: center; margin-right: 0.1rem; }
+      .line { width: 0.66rem; height: 0.02rem; background: $iconh; position: absolute; left: -0.72rem; top: 50%; margin-top: -0.01rem;}
+      &:before { content: ''; width: 0.02rem; height: 0.64rem; background: $iconh; display: block;  position: absolute; left: -0.73rem; top: 50%;}
+      &:last-child:before { display: none;}
+    }
+    .titleBox_hl {
+      width: 20%; position: relative;@include display-flex();@include align-items-center();
+      .line {width: 80%; height: 0.02rem; background: $iconh; margin-top: -0.1rem;}
+    }
+    .title_hotLine {
+      border: 0.01rem solid $tedilan; @include css3(border-radius,0.04rem);height: 1.8rem; line-height: 0.36rem; width: 0.48rem;font-size: 0.28rem;color: $voteCur; text-align: center;  background: $btnC; padding:0.3rem 0.1rem 0 0.1rem; @include flex(0, 0, 0.48rem); 
+    }
+}
+
+.p_privilege { color: $uerlan_color; font-size: 0.24rem;}
+
+.msg_server {
+  font-size: 0.3rem; text-align: center; width: 6.30rem; margin: 0.3rem auto; background: $btnC; border: 1px solid $tedilan; @include css3(border-radius,0.04rem); padding: 0.3rem; 
+  h3 { color: $uerlan_color; margin-bottom: 0.1rem;}
+  p { color: $fblue;}
+}
+.weng_server {
+  margin: 0 4%;
+  color: $uerlan_color; font-size: 0.28rem; line-height: 0.42rem;
+  p { margin-bottom: 0.16rem;}
+  em { color: $fblue;}
+  b { font-weight: bold;}
+}
+
+/* 底部按钮 */
+.fn_final {
+  position: fixed;bottom: 0; left: 0; height: 1.10rem; width: 100%; z-index: 999; background: $bg; @include display-flex(); @include justify-content-space-between();@include align-items-center();
+  a { margin:0 0.3rem; }
+  a:nth-child(1) {
+    @include flex(1, 1, 34%); margin-right: 0
+  };
+  a:nth-child(2) {
+    @include flex(1, 1, 66%); margin-left: 0.1rem;
+  }
+}
+
+/* menu导航 */
+.menu_server {
+  position: fixed; left: 0; top: 0; height: 100%; width: 100%; z-index: 1999;@include css3(transform-style,preserve-3d); opacity: 1; @include css3(perspective, 1000px);@include css3(perspective-origin, 70% 0);
+  .bgCover { position: absolute; width: 100%; height: 100%;}
+  ul {
+    position: absolute; right: 0; top: 0; width: 4.38rem;@include css3(transition,all 0.8s cubic-bezier(0.77, 0, 0.175, 1));@include css3(transform-origin,50% 0);@include css3(backface-visibility, hidden);@include css3(transform,translate3d(0,0,0) rotateX(0deg));max-height: 100vh; overflow: auto;
+    li { 
+      height: 0.88rem; line-height: 0.88rem; @include linear-gradient($menuCTop,$menuCEnd,vertical);
+      a { color: $uerlan_color; font-size: 0.3rem;display: block;}
+      .iconfontYZ { font-size: 0.5rem; color:$menuCIcon; text-shadow:0 0 0.1rem $menuCshadow;vertical-align: middle; width: 1.5rem; text-align: center; display: inline-block;}
+      &:hover,&:focus,&.current { 
+        background: $menuCH;
+        a {color: $curStatus_color;}
+        .iconfontYZ { color: $iconh;}
+      }
+    }
+  }
+  &.hidden {
+    visibility:hidden;
+    ul {@include css3(transform,translate3d(0,-20%,0) rotateX(90deg));opacity: 0;} 
+  }
+}
+
+
+/* 表单 */
+.form_normal {
+  padding: 0 0.3rem;
+  .row_form {
+    border-bottom: 1px solid $navbc; @include display-flex(); @include justify-content-space-between();@include align-items-center();@include flex-wrap-wrap(); padding: 0.22rem 0; position: relative;
+    .title_form { color: $formTextC; font-size: 0.28rem;}
+    .box_form {@include flex(1, 1, auto); margin-right: 0.1rem;}
+    .next_row {@include flex(1, 0, 100%); margin-top: 0.14rem;}
+    &:last-child { border: none;}
+  }   
+  .iconYZ-youjiantou { font-size: 0.36rem; color: $btngrey;@include flex(0, 0, auto);} 
+  .iconYZ-wenhao { font-size: 0.3rem; vertical-align: middle; color: $forange;}
+}
+.input_normal { border: none; background: none; width: 100%; height: 0.6rem; text-align: right; color: $voteCur; font-size: 0.28rem;}
+.text_normal { border: none; background: none; width: 100%; height: 0.6rem; text-align: right; color: $voteCur; font-size: 0.28rem; color: $btngrey; line-height: 0.6rem;}
+.select_normal {border: none; background: none; width: 100%; height: 0.6rem; text-align: right; color: $voteCur; font-size: 0.28rem;}
+.textarea_normal {
+  border: 1px solid $navbc; background: none; width: 96%; color:$tipTC; color: $voteCur; font-size: 0.28rem; padding: 2%;
+}
+.tip_formN {text-align: right; color: $btngrey; font-size: 0.28rem;}
+
+.list_record {
+  padding: 0.3rem;
+  li { 
+    background: $btnC; border: 1px solid $tedilan; border-radius: 4px; position: relative;font-size: 0.28rem; margin-bottom: 0.3rem;
+    aside { color: $uerlan_color;font-size: 0.28rem;padding: 0.22rem 4%;}
+  } 
+  .tip_result { position: absolute; right: 4%; top:0.22rem; color: $fblue;} 
+  .btn_detailM { border-top: 1px solid $tedilan; display: block; width: 100%; height: 0.86rem; line-height: 0.86rem; text-align: center; color: $frbrown;}
+}
+
+.list_recordH {
+  .row_list { @include clearfix();}
+  font-size: 0.28rem; color: $uerlan_color;
+  dt { float: left; width: 34%; text-align: right; padding-right: 8%;}
+  dd { float: left; width: 58%;}
+  .cutImg { 
+    width: 1.4rem; display: inline-block; line-height: 1.4rem; background: #000;
+    img {width: 1.4rem; vertical-align: middle;}
+  }
+}
+.popUp_recordH { display: none;}
+
+.title_big { 
+  text-align: center; font-size: 0.32rem; color: $uerlan_color; 
+  em { color: $fblue;}
+}
+.btn_memberRule { 
+  font-size: 0.24rem; color: $uerlan_color;
+  i { color: $voteCur; font-size: 0.28rem; vertical-align: middle; @include inlineBlock(); margin-top: -0.04rem;}
+}
+
+/*  成长 */
+.swiper_member {
+  width: 100%;
+  .swiper-wrapper { width: 100%;}
+  .swiper-slide {
+    font-size: 0.3rem; margin: 0.3rem auto; background: $btnC; border: 1px solid $tedilan; @include css3(border-radius,0.04rem); padding: 0.3rem; width: 5.3rem; 
+    h4 { text-align: center; font-size:0.32rem;color: $frbrown;} 
+    &:before { content: ''; width: 0.22rem; height: 0.11rem; position: absolute; left: 50%; margin-left: -0.11rem; top: -0.11rem; background: url($sprite) no-repeat -1.56rem -0.05rem; @extend .bgSize;} 
+  }
+  .swiper-slide-active {
+    border-color: $btnBh;@include css3(box-shadow, 0 0 0.3rem 0.15rem #0b2c55 inset);
+    &:before { background-position: -1.56rem -0.23rem;}
+  }
+}
+.list_member {
+  @include clearfix();
+  dt { 
+    color: $fblue; font-size: 0.32rem;
+    i { font-size: 0.48rem; margin-right: 0.1rem;vertical-align: middle;}
+  }
+  dd { 
+    color: $uerlan_color; line-height: 0.6rem; padding-left: 0.3rem; float: left; width: 2.35rem;
+    i { font-size: 0.5rem; color: $pointC; vertical-align: top;}
+  } 
+}
+.nav_member {
+  height: 0.08rem; background: $bc; position: relative; margin-top: 0.5rem;
+  .progressBar { height: 0.08rem; background: $fblue;}
+  li { 
+    float: left; position: relative;font-size: 0.24rem; color: $uerlan_color; padding-top: 0.28rem;
+    span { margin-left: -0.8rem; display: block; width: 1.6rem; text-align: center;}
+    &:before { content: '●'; position: absolute; color: $bc; font-size: 0.55rem; top: -0.48rem; left: -0.15rem;}
+    &:first-child:before {left: 0; margin-left: -0.1rem;}
+    &.arrive:before {color:$fblue; }
+    &.active {font-size: 0.32rem; color: $voteCur;}
+  }
+}
+.wrap_overH { width: 100%; overflow: hidden;}
+
+.pop_tq_rule {
+    width: 86%; left: 6%; display: none;
+    em { color: $fblue;}
+}
+.table_normal { 
+  width: 100%; border-color: $fblue;
+  th { background: $oddbg; color:$fblue; font-weight: normal;}
+  td,th { padding: 0.1rem;}
+}
+
+/* 小游帮助  */
+.box_pri {
+  font-size: 0.3rem; width: 84%; margin: 0.3rem auto; background: $btnC; border: 1px solid $tedilan; @include css3(border-radius,0.04rem); padding: 0.3rem; 
+}
+.list_Q{
+  font-size: 0.28rem;
+  li { margin-bottom: 0.18rem;}
+  a { color: $uerlan_color;}
+}
+.btn_moreQ { 
+  color: $fblue; display: block; margin-top: 0.3rem;
+}
+
+.list_QA {
+  ul { padding: 0.1rem 0.3rem 0 0.3rem;}
+  li { @include clearfix(); margin-bottom: 0.3rem;}   
+}
+.title_dialog { 
+  width: 0.66rem; height: 0.66rem; border-radius: 50%; overflow: hidden;
+  i { display: block; width: 0.66rem; height: 0.66rem; background: url($sprite) no-repeat;@extend .bgSize;}
+}
+.dialogXy {border-radius: 0.24rem; padding: 0.1rem 0.3rem; color: $uerlan_color; font-size: 0.28rem; max-width: 4.58rem;}
+.dialog_user {
+  .title_dialog {
+    background: $navbg; float: right;
+    i { background-position: 0.16rem -0.64rem;}
+  }
+  .dialogXy {float: right;background: $navbg; margin-right: 0.2rem;border-top-right-radius: 0;}
+}  
+.dialog_xy {
+  .title_dialog {
+    background: $xyBgC;float: left;
+    i {background-position: -0.48rem -0.64rem;}
+  }
+  .dialogXy {float: left;background: $xyBgC;margin-left: 0.2rem;border-top-left-radius: 0;}
+}  
+.sendmBox {
+   @include flex(1, 1, auto); @include display-flex(); @include align-items-center(); margin: 0 0.3rem;
+  .input_qa { height: 0.62rem; background: $inputBgC; border: 0.01rem solid $buttonBgC;@include flex(1, 1, auto); color:$curStatus_color; font-size: 0.3rem; padding-left: 0.2rem;}   
+  .button_qa {height: 0.64rem; width: 1.24rem; background:$buttonBgC;border: none; color: #FFF; font-size: 0.28rem; outline: none;@include flex(0, 0, auto); }
+}
+
+.pop_tq_wechat {
+  width: 5.4rem; left:50%; height: 4.60rem; top: 50%; margin: -2.3rem 0 0 -2.7rem; display: none;
+  .img_wechat { width:2.22rem; height: 2.22rem; margin: 0.14rem 0 0.26rem 0;}
+}
+.pop_tq_phone {
+    width: 5.14rem; left:50%; height: 3.20rem; top: 50%; margin: -1.6rem 0 0 -2.57rem; display: none;
+    .p_phoneNumb { color: $formTextC; font-size: 0.32rem; text-align: center; padding: 0.4rem 0 0 0;}
+}
+
+.article_QA {
+    font-size: 0.26rem; color: $uerlan_color; padding: 0.3rem;
+    h2 { font-size: 0.3rem; color: $curStatus_color; margin-bottom: 0.1rem;}
+    h3 { color: $fblue; margin-top: 0.12rem; padding-bottom: 0.04rem;}
+}
+
+/*=- 横屏样式
+------------------------------------=*/
+.heng {
+  .list_privilege ul {@include display-flex();@include justify-content-space-between(); @include flex-wrap-wrap(); padding: 0.3rem 2%;}
+  .list_privilege ul li {@include flex(0, 0, 48.5%);}
+  .list_privilege .small_list_pri {@include justify-content-inherit();}
+  .list_privilege .small_list_pri li {@include flex(0, 0, 2.2rem); margin: 0 0.1rem 0.2rem 0.1rem;}
+  .swiper_member .swiper-slide { width: 10rem;}
+  .list_member dt { float: left;}
+  .btn_memberRule {border: 1px solid $tedilan; padding: 0.04rem 0.16rem 0.02rem 0.16rem; border-radius: 0.04rem; position: absolute; right: 0.2rem; top: 0.22rem;}
+  .pT50 { padding-top: 0.3rem !important;}
+  .nav_member { margin-top: 0.3rem;}
+}

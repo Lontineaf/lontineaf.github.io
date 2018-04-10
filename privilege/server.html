@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>特权服务</title>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+<section class="container">
+	<header class="header_user">
+		<a href="eventQuery.html" class="f_r btn_eventQuery iconfontYZ iconYZ-shijianchuli" title="事件查询"></a>
+		<section class="f_l">
+		    <p><img src="../images/avar.jpg" alt="" class="photo_user"></p>
+	        <p class="name_user">Joy Fu 账号昵称</p>
+	        <img src="../images/vip/lv5.png" alt="" class="">
+        </section>
+	</header>
+	<section class="tab_nav">
+	    <ul>
+	    	<li class="current">基础服务</li>
+	    	<li>特权服务</li>
+	    	<li>尊享服务</li>
+	    </ul>    	
+	</section>
+	<section class="list_privilege">
+		<ul>
+			<li>
+				<a href="server_hotline.html">
+					<i class="iconfontYZ iconYZ-kefudianhua"></i>
+				    <p>400-668-9919
+				    <span>全国7x24小时电话服务热线</span></p>
+				</a>
+			</li>
+			<li>
+				<a href="server_xiaoyou.html">
+					<i class="iconfontYZ iconYZ-xiaoyoubangzhu"></i>
+				    <p>小游帮助
+				    <span>随心搜索 即时交流</span></p>
+				</a>
+			</li>
+			<li>
+				<a href="server_selfService.html">
+					<i class="iconfontYZ iconYZ-zizhufuwu"></i>
+				    <p>自助服务
+				    <span>高效快捷 一站式服务</span></p>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="list_privilege">
+		<ul class="small_list_pri">
+			<li>
+				<span class="tip_privilege">V5解锁</span>
+				<a href="server_cdr.html">
+					<i class="iconfontYZ iconYZ-KF_shujuhuifu"></i>
+				    <p>数据恢复</p>
+				</a>
+			</li>
+			<li>
+				<span class="tip_privilege">V5解锁</span>
+				<a href="server_butler.html">
+					<i class="iconfontYZ iconYZ-zhuanshuguanjia"></i>
+				    <p>专属管家</p>
+				</a>
+			</li>
+			<li>
+				<a href="server_order.html">
+					<i class="iconfontYZ iconYZ-yuyuefuwu"></i>
+				    <p>预约服务</p>
+				</a>
+			</li>
+			<li>
+				<a href="server_advice.html">
+					<i class="iconfontYZ iconYZ-jianyifankui"></i>
+				    <p>建议反馈</p>
+				</a>
+			</li>
+			<li>
+				<a href="server_timeLimit.html">
+					<i class="iconfontYZ iconYZ-xianshichuli"></i>
+				    <p>限时处理</p>
+				</a>
+			</li>
+			<li>
+				<a href="server_rebate.html">
+					<i class="iconfontYZ iconYZ-chongzhifanli"></i>
+				    <p>充值返利</p>
+				</a>
+			</li>
+			<li>
+				<a href="server_clicktocall.html">
+					<i class="iconfontYZ iconYZ-yijianhujiao"></i>
+				    <p>游戏内一键呼叫</p>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="list_privilege">
+		<ul>
+			<li>
+				<a href="javascript:;" class="btn_phone">
+					<i class="iconfontYZ iconYZ-zhuanxiandianhua"></i>
+				    <p>138-1133-2234
+				    <span>专线号码 只属于您的一对一</span></p>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;" class="btn_wechat">
+					<i class="iconfontYZ iconYZ-zhuanrenweixin"></i>
+				    <p>专人微信
+				    <span>更多方式 更多贴心</span></p>
+				</a>
+			</li>
+		</ul>
+	</section>
+
+</section>
+
+<!-- 专人微信弹框 -->
+<section class="pop_tong_group pop_tq_wechat">
+    <span class="pop_up_bg"></span>
+    <a href="javascript:;" title="关闭弹窗" class="btn_pop_close"></a>
+    <div class="pop_tong_box">
+      <div class="ptong_title">专人微信</div>
+      <p class="alignCenter"><img src="../images/pic_qr.png" alt="" class="img_wechat"></p>
+      <p class="alignCenter color-z">长按识别二维码</p>
+      <p class="alignCenter">享受全时段全方位提供独有的贵宾服务</p>
+    </div>
+  </section>
+<!-- 专人微信弹框 -->
+
+<!-- 专拨打专线弹框 -->
+<section class="pop_tong_group pop_tq_phone">
+    <span class="pop_up_bg"></span>
+    <div class="pop_tong_box">
+      <div class="ptong_title">拨打专线</div>
+      <p class="p_phoneNumb">138 1133 2234</p> 
+      <p class="libao_queha marginT30">
+        <a href="javascript:;" class="btn_t_lan" title="取消"> 取消</a>
+        <a href="javascript:;" class="btn_t_huang" title="确定"> 确定</a>
+      </p>
+    </div>
+  </section>
+<!-- 拨打专线弹框 -->
+<div class="pop_mark"> </div>
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/main.js"></script>	
+<script>
+    Community.pageRem();
+    $(function($) {
+    	//tab
+        $(".tab_nav li").tab(".list_privilege");
+        
+        //弹出框
+        $(".btn_phone").on('click', function(event) {
+        	event.preventDefault();
+        	$(".pop_tq_phone,.pop_mark").show();
+        });
+        $(".btn_wechat").on('click', function(event) {
+        	event.preventDefault();
+        	$(".pop_tq_wechat,.pop_mark").show();
+        });
+
+        $(".pop_tq_phone .btn_t_lan,.pop_mark,.btn_pop_close").on('click', function(event) {
+        	event.preventDefault();
+        	$(".pop_tong_group,.pop_mark").hide();
+        });
+    });	
+</script>
+</body>
+</html>

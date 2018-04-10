@@ -1,0 +1,230 @@
+@charset "UTF-8";
+html {
+    font-size: 62.5%;
+}
+$fblue:#1c91e2;
+$fblue2:#a3b1bf;
+$firstColor:#313233;
+$forange:#fe6700;
+$fwhite:#eeeded;
+// $fred:#ff680f;
+$fgrey:#979797;
+$bg:#ffffff;
+$bc:#e9e9e9;
+$oddbg:#f7f7f7;
+// $blue:#9dcdf5;
+$curStart:#000;         		//选中颜色
+$secondBg:#f2f2f2;
+$thirdBg:#f5f5f5;	
+$homeBoxBorderColor:#f8f9fb;
+$url:style1;
+$prefix:"..";
+$voteBg:#fff;
+$voteCur:#6cb1ff;				//投票选中色
+$voteNotCur:#bcdbfe;
+$voteEndBg:#D8D8D8;				//投票结束背景色
+$voteEndCur:#a3a3a3;            //投票结束选中色
+$buleBG2:#152130;			    //灰蓝色背景
+
+
+
+.pipe {
+	display:block;       		//导航分割线是否存在
+	background: #BDC6CF;				//存在的话背景色
+}
+@mixin curStatus {
+    border-bottom: 1px solid #000;
+    color:#000;
+}
+// 字体图标文件
+@font-face {
+    font-family: "iconfont";
+    src: url(#{$prefix}/font/iconfont.ttf) format('truetype');
+}
+@import "../modules/all.scss";
+@import "../ventor/reset.scss";	
+@import "../ventor/mui.picker.min.scss";
+//@import "../ventor/mui.scss";
+@import "../ventor/fancybox.scss";
+		
+@import "icon.scss";			
+@import "main.scss";  
+@import "log.scss";  
+@import "msg.scss";
+@import "emoji.scss";
+@import "role.scss";
+@import "posts.scss";
+@import "vote.scss";
+@import "setting.scss";
+@import "forum.scss";
+@import "report.scss";
+@import "friend.scss";
+@import "friend1.5.scss";
+// @import "data.scss";
+// @import "home.scss";
+@import "datav1.5.scss";
+@import "homev1.5.scss";
+@import "response.scss";
+@import "header.scss"; 
+@import "sign.scss";
+@import "game.scss";
+@import "dialog.scss";
+@import "news.scss";
+@import "chat.scss";
+@import "nonage.scss";
+
+
+//图标
+//发帖页视频图标 66*66
+.i-video {
+    background: url(#{$prefix}/images/play2.png);
+    background-size: cover;
+}
+//发帖页栏目图标 66*66
+.i-tag {
+    background: url(#{$prefix}/images/tag2.png);
+    background-size: cover;
+}
+//发帖页表情图标 66*66
+.i-smile {
+    background: url(#{$prefix}/images/sa2.png) no-repeat;
+    background-size: cover;
+}
+//发帖页图片图标 66*66
+.i-photo {
+    background: url(#{$prefix}/images/gallery2.png) no-repeat;
+    background-size: cover;
+}
+//发帖页图标高亮状态 66*66
+.editTool {
+    .iconfont.cur {
+        .i-video {
+            background: url(#{$prefix}/images/play.png);
+            background-size: cover;
+        }
+        .i-tag {
+            background: url(#{$prefix}/images/tag.png);
+            background-size: cover;
+        }
+        .i-smile {
+            background: url(#{$prefix}/images/sa.png);
+            background-size: cover;
+        }
+        .i-photo {
+            background: url(#{$prefix}/images/gallery.png);
+            background-size: cover;
+        }
+    }
+}
+// 女性图标 54*54
+.i-girl {
+    background: url(#{$prefix}/images/i-girl.png);
+    background-size: cover;
+}
+// 男性图标 54*54
+.i-man {
+    background: url(#{$prefix}/images/i-man.png);
+    background-size: cover;
+}
+// 弹窗返回成功图标 84*84
+.i-ok {
+    background: url(#{$prefix}/images/i-ok.png);
+    background-size: cover;
+}
+// 弹窗返回失败图标 84*84
+.i-error {
+    background: url(#{$prefix}/images/i-error.png);
+    background-size: cover;
+}
+// 弹窗返回提示图标 84*84
+.i-point {
+    background: url(#{$prefix}/images/i-point.png);
+    background-size: cover;
+}
+// 回复图标(大量使用) 66*66
+.i-message {
+    background: url(#{$prefix}/images/ico-message.png) center center no-repeat;
+    background-size: cover;
+}
+// 喜欢爱心图标(未点击) 66*66
+.i-love0 {
+    background: url(#{$prefix}/images/ico-love0.png) center center no-repeat;
+    background-size: cover;
+}
+// 喜欢爱心图标(点击) 66*66
+.i-love1 {
+    background: url(#{$prefix}/images/ico-love1.png) center center no-repeat;
+    background-size: cover;
+}
+// 帖子排序图标 66*66
+.i-sort {
+    background: url(#{$prefix}/images/ico-sort.png) center center no-repeat;
+    background-size: cover;
+}
+// 帖子排序图标二态  66*66
+.i-sort.cur {
+    background: url(#{$prefix}/images/ico-sort1.png) center center no-repeat;
+    background-size: cover;
+}
+// msg.html系统头像 88*88
+.i-msgsystem {
+    background: url(#{$prefix}/images/msgsystem.png) center center no-repeat;
+    background-size: cover;
+}
+// 个人中心通知图标 66*66
+.i-tongzhi {
+    background: url(#{$prefix}/images/mine_list_t.png) center center no-repeat;
+    background-size: cover;
+}
+// 已关注图标 135*84
+.i-group1 {
+    background: url(#{$prefix}/images/Group.png) center center no-repeat;
+    background-size: cover;
+}
+// 互相关注图标 135*84
+.i-group2 {
+    background: url(#{$prefix}/images/Group2.png) center center no-repeat;
+    background-size: cover;
+}
+// 加关注图标 135*84
+.i-group3 {
+    background: url(#{$prefix}/images/Group3.png) center center no-repeat;
+    background-size: cover;
+}
+// 发送消息图标 135*84
+.i-group4 {
+    background: url(#{$prefix}/images/Group4.png) center center no-repeat;
+    background-size: cover;
+}
+// 消息发送失败图标 22*22
+.failPoint {
+    background: url(#{$prefix}/images/failpoint.png);
+}
+// 空白页图片 1334*983
+.errorBox {
+    background: url(#{$prefix}/images/error_blank.png) no-repeat center center;
+    background-size: cover;
+}
+// 首页发帖图标 96*96
+.btn-posting {
+    background: url(#{$prefix}/images/posting.png);
+    background-size: cover;
+}
+
+
+
+//活动消息
+.i-msgactivity{
+        background: url(../images/msgactivity.png) center center no-repeat;
+    background-size: cover;
+}
+//社区消息
+.i-msgcommunity{
+        background: url(../images/msgcommunity.png) center center no-repeat;
+    background-size: cover;
+}
+//系统消息
+.i-msgwin{
+        background: url(../images/msgwin.png) center center no-repeat;
+    background-size: cover;
+}

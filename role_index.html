@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>角色</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<section class="container">
+		<section class="tab_nav" style="position: absolute; width: 100%; z-index: 2;">
+		    <ul>
+		    	<li class="current">分类1</li>
+		    	<li>分类2</li>
+		    	<li>分类3</li>
+		    	<li>分类4</li>
+		    </ul>    	
+		</section>
+		<section class="role_list">
+			<div class="forumBox forumBox_1">
+				<ul>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称</h3> <p>这是一句话简介.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称</h3> <p>这是一句话简介.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称</h3> <p>这是一句话简介.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称</h3> <p>这是一句话简介.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称</h3> <p>这是一句话简介.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+				</ul>
+		    </div>
+		</section>
+
+		<section class="role_list">
+			<div class="forumBox forumBox_2">
+				<ul>
+				    <li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>
+					<li>
+						<img src="images/pic_1.jpg" alt="">
+						<aside><h3>角色名称能有多长</h3> <p>这是一句话简介能写多少,能换行吗.</p></aside>
+						<a href="role_index_detail.html">查看详情</a>
+					</li>	
+				</ul>
+		    </div>
+		</section>
+
+
+</section>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/main.js"></script>	
+<script>
+    Community.pageRem();
+    setTimeout(function(){
+        Community.isscrollFunc(".forumBox_1");
+        Community.isscrollFunc(".forumBox_2");
+    },200)
+    $(function($) {
+    	//tab
+        $(".tab_nav li").tabV(".role_list","click",function(){
+            console.log("切换")	
+        });   
+    });	
+</script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+@charset "UTF-8";
+/*// 横竖屏切换css*/
+
+@media screen and (orientation: portrait) {
+    .dataWrap {
+        .item {
+            width: 30%;
+            float: left;
+            margin: 0.9rem 0.4rem 0;
+            text-align: center;
+        }
+    }
+    .voteBox {
+        width: 100%;
+    }
+    .pageimgList {
+        width: 100%;
+    }
+    .pageimgOnepage {
+        img {
+            max-width: 70%;
+            margin-top: 0.6rem;
+        }
+    }
+    .homeBox .dataItem {
+        width: 46%;
+        margin: 0 0.3rem 0.8rem;
+    }
+    .errorBox {
+        left: 10%;
+        top: 40%;
+        right: 10%;
+        bottom: 17%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+    }
+    .roleName .item:nth-child(3n) {
+        margin-right: 0;
+    }
+    .homeBox .sectionList .col .ico {
+        margin-right: 0;
+        width: 18px;
+        height: 18px;
+    }
+    .publish-article-content {
+        height: 40%;
+    }
+    .pub-faces .face-panel-1 {
+        background: url(#{$prefix}/images/001.png) no-repeat;
+    }
+    .pub-faces .face-panel-2 {
+        background: url(#{$prefix}/images/002.png) no-repeat;
+    }
+    .pub-faces .face-panel-3 {
+        background: url(#{$prefix}/images/003.png) no-repeat;
+    }
+    .upLoadItem:nth-child(3n) {
+        margin-right: 0;
+    }
+    .editList .upLoadItem:nth-child(5n) {
+        margin-right: 1rem;
+    }
+    .homeBox .sectionList {
+        .scol {
+            width: 50%;
+        }
+        .scol:nth-child(3) .inner,
+        .scol:nth-child(4) .inner {
+            border-bottom: 0;
+        }
+        .scol:nth-child(4) .inner {
+            border-right: 0;
+        }
+    }
+    .forumImg {
+        a {
+            height: 4.5rem;
+        }
+    }
+    .checkBox .reportList p {
+        width: 100%;
+    }
+    .checkBox {
+        width: 60%;
+    }
+    .reportBox .articleBox {
+        width: 230px;
+    }
+    .forumTit {
+        width: 79%
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .dataWrap {
+        .item {
+            width: 18%;
+            float: left;
+            margin: 0.9rem 0.5rem 0;
+            text-align: center;
+        }
+    }
+    .pageimgList {
+        width: 50%;
+    }
+    .pageimgOnepage {
+        img {
+            max-width: 50%;
+            margin-top: 0.6rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*勋章*/
+
+@media screen and (orientation: portrait) {
+    .medalWrap {
+        .item {
+            width: 26%;
+            margin: .5rem 2.8%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*好友*/
+
+@media screen and (orientation:portrait) {
+    .friendNewBox {
+        div[class^="main"] {
+            &.friendgGroup {
+                height: 10.5rem;
+                .padbot {
+                    height: 90%;
+                    padding-bottom: 10%;
+                }
+            }
+            &.friendFind {
+                .fr_findBD {
+                    height: 6.85rem;
+                }
+            }
+        }
+    }
+    .friendSearch .searchBtn {
+        .form-frGroup {
+            width: 80%;
+        }
+        .search-control {
+            width: 85%;
+        }
+        .btn-search {
+            margin-right: 0;
+        }
+    }
+
+    .friendZone {
+        .gameZone {
+            .avarGroup {
+                width: 50%;
+            }
+        }
+    }
+    .fr_findBD {
+        .item {
+            width: 92%;
+            &:nth-child(odd) {
+                margin-right: 0;
+            }
+        }
+    }
+    .friend_find {
+        height:170px;
+        overflow: hidden;
+        .find_form {
+            width: 100%;
+            height: 130px;
+            overflow: hidden;
+        }
+        .friptB {
+            margin-right: -.1rem;
+            .selectBtn {
+                margin: -.1rem .1rem;
+            }
+        }
+        .frIpt {
+            margin-top: .1rem;
+        }
+        .find_btn {
+            top: auto;
+            top:150px;
+            width: auto;
+            right: 50%;
+            -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+            .btn_fr {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .fr_findLst {
+        padding-top:200px;
+        &.android{padding-top:210px}
+    }
+
+    .btn_frW3 {
+        margin-right: 0;
+    }
+    .friendSearch {
+        .form-frGroup {
+            width: 79%;
+        }
+        .search-control {
+            width: 85%;
+        }
+        .btn_fr {
+            margin-right: 0;
+        }
+    }
+    .main3 {
+        .errorBox {
+            top: 4.5rem;
+        }
+    }
+}
+
+
+/* iPhone5  */
+
+@media screen and (orientation:portrait) and (max-height:568px) {
+    .friptB .selectBtn {
+        width: 85px!important;
+    }
+    .ipt-control {
+        width: 200px;
+    }
+    .friend_find {
+        height: 3.8rem;
+    }
+    .fr_findLst {
+        padding-top: 187px;
+    }
+}
+@media screen and (orientation:landscape) and (max-height:320px) {
+    .friptB .selectBtn {
+        width: 92px!important;
+    }
+    .ipt-control {
+        width: 232px;
+    }
+    .fr_findLst{padding-top: 2.5rem;}
+}

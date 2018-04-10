@@ -1,0 +1,233 @@
+@charset "UTF-8";
+.roleName {
+    padding: 1rem;
+    min-height: 50px;
+    position: relative;
+    background: $secondBg;
+    @include clearfix();
+    .fblue {
+        color:#97c7f4;
+    }
+    .avarName span {
+        background-size: cover;
+        display: inline-block;
+        vertical-align: middle;
+        padding-right:.2rem;
+    }
+    .avarName img {
+        height: 16px;
+        vertical-align: top;
+    }
+    .aname {
+        margin-right:4px;
+        width:auto!important;
+        max-width:11.8rem;
+        @include singleline-ellipsis;
+    }
+    .power{margin-right: 1rem;}
+    .avar {
+        position: absolute;
+        top: 1.5rem;
+    }
+    .avarMask {
+        // background: url(#{$prefix}/images/avaroddmask.png);
+        background-size: cover;
+    }
+    .item {
+        width: 7rem;
+        height: 7rem;
+        float: left;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        border: 2px solid $oddbg;
+    }
+    .avarInfo {
+        margin-left:4.7rem;
+    
+    }
+    // .addOpt {
+    //     background: url(#{$prefix}/images/add.png) center center no-repeat;
+    //     border: 2px solid #d6d6d6;
+    // }
+    .group {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        .icon {
+            width: 4rem;
+            height: 2.5rem;
+            display: block;
+            overflow: hidden;
+        }
+        .btn{
+            width:50px;height:28px;line-height:28px;text-align: center;
+            border:1px solid ;
+            display: inline-block;
+        }
+    .btn-chat{
+        border-color: #66ccff;
+        color:#66ccff;
+    } 
+    .btn-friend{
+        border-color: $forange;
+        color:$forange;
+    }
+    }
+    .reportBtn {
+        float: left;
+        line-height: 30px;
+        color:$fgrey;
+        margin-right: 10px;
+    }
+    .btn-blacklist{
+        border:1px solid $bc;
+        color:$fgrey;
+    }
+}
+
+.roleList {
+    @include clearfix();
+    .roleItem {
+        line-height: 4.1rem;
+        padding: 0 1.25rem;
+        border-bottom: 1px solid $bc;
+        position: relative;
+    }
+    .icon {
+        width: 1.8rem;
+        height: 1.8rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+    .iconfontYZ {
+        font-family: "iconfontYZ" !important;
+        font-size: 1.83rem; line-height:1.83rem; color:$fblue; 
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .i-arrow {
+        position: absolute;
+        right: 1.25rem;
+        font-size: 16px;
+    }
+    .sysname {
+        position: absolute;
+        right: 3.25rem;
+    }
+    .roleGame {
+        padding: 0 1.25rem;
+        line-height: 2.5rem;
+        .gameList {
+            float: right;
+            margin-top: 1rem;
+        }
+        span {
+            width: 3.333333rem;
+            height: 3.333333rem;
+            display: inline-block;
+            background-size: cover;
+            margin: 0 0.416667rem;
+        }
+    }
+    .tag {
+        background: $fblue;
+        padding: 0 8px;
+        border-radius: 999px;
+        color: #fff;
+        font-size: 12px;
+        position: absolute;
+        right: 3.25rem;
+        line-height: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.unlog {
+    margin-left: 5rem;
+    line-height: 50px;
+    .iconfont {
+        font-size: 14px;
+        vertical-align: top;
+        margin-left: 4px;
+    }
+}
+
+.btn-detail-group {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 999;
+    .state {
+            padding: 0 10px;
+        height: 39px;
+        line-height: 39px;
+        display: block;
+        float: left;
+        margin-right: 24px;
+        border-radius:6px;
+        text-align: center;
+    }
+    .state1 {
+        color: #1495eb;
+        background:#e7f4fd;
+        border:1px solid #1495eb;
+    }
+    .state2 {
+        background:#8fda3c;
+        color: #fff;
+        border:1px solid #8fda3c;
+    }
+    .state3 {
+        background:#8fda3c;
+        color: #fff;
+        border:1px solid #8fda3c;
+    }
+    // .btn-msg {
+    //     width:66px;
+    //     height: 42px;
+    //     display: block;
+    //     background: url(#{$prefix}/images/state4.png) no-repeat;
+    //     background-size: contain;
+    //     float: left;
+    // }
+}
+.avarList {
+    @include clearfix();
+    clear: both;
+    border-bottom: 10px solid $bc;
+    border-top: 1px solid $bc;
+    background:$bg;
+    .list {
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        width: 80%;
+        padding: 12px 0;
+    }
+    .item {
+        float: left;
+        text-align: center;
+        width: 30%;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    p {
+        color: $fgrey;
+    }
+}
+
+.roleInfo {
+    padding: 0 1rem;
+    .col {
+        color: #323234;
+        width: 4.6rem;
+        text-align: right;
+        display: inline-block;
+        line-height: 2.5rem;
+    }
+}

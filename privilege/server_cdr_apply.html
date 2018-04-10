@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>特权服务</title>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body style="visibility: hidden;">
+<section class="container">
+	<header class="header_user">
+		<a href="javascript:;" class="f_r btn_eventQuery iconfontYZ iconYZ-hanbaobao" id="btn_menu"></a>
+		<section class="menu_server hidden">
+			<div class="bgCover"></div>
+			<ul>
+				<li class="current"><a href="server_cdr.html"><i class="iconfontYZ iconYZ-KF_shujuhuifu"></i>数据恢复</a></li>
+				<li><a href="server_butler.html"><i class="iconfontYZ iconYZ-zhuanshuguanjia"></i>专属管家</a></li>
+				<li><a href="server_order.html"><i class="iconfontYZ iconYZ-yuyuefuwu"></i>预约服务</a></li>
+				<li><a href="server_advice.html"><i class="iconfontYZ iconYZ-jianyifankui"></i>建议反馈</a></li>
+				<li><a href="server_timeLimit.html"><i class="iconfontYZ iconYZ-xianshichuli"></i>限时处理</a></li>
+				<li><a href="server_selfService.html"><i class="iconfontYZ iconYZ-zizhufuwu"></i>自助服务</a></li>
+				<li><a href="server_rebate.html"><i class="iconfontYZ iconYZ-chongzhifanli"></i>充值返利</a></li>
+				<li class="borderT"><a href="server_hotline.html"><i class="iconfontYZ iconYZ-kefudianhua"></i>客服热线</a></li>
+				<li><a href="server_xiaoyou.html"><i class="iconfontYZ iconYZ-xiaoyoubangzhu"></i>小游帮助</a></li>
+			</ul>
+		</section>
+		<section class="f_l">
+		    <p><img src="../images/avar.jpg" alt="" class="photo_user"></p>
+	        <p class="name_user">Joy Fu 账号昵称</p>
+	        <img src="../images/vip/lv5.png" alt="" class="">
+        </section>
+	</header>
+    
+    <article class="borderT pB130">
+        <form action="" class="form_normal">
+            <section class="row_form">
+                <p class="title_form">绑定身份证</p>
+                <div class="box_form">
+                	<input type="text" class="input_normal" placeholder="请输入您的身份证号">
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>	
+            </section>
+            <section class="row_form">
+                <p class="title_form">绑定手机</p>
+                <div class="box_form">
+                	<input type="text" class="input_normal" placeholder="请输入您的手机号">
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>	
+            </section>
+            <section class="row_form">
+                <p class="title_form">绑定邮箱</p>
+                <div class="box_form">
+                	<input type="text" class="input_normal" placeholder="请输入您的邮箱">
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>	
+            </section>
+            <section class="row_form">
+                <p class="title_form">所在游戏</p>
+                <div class="box_form">
+                	<input type="text" class="input_normal" value="大皇帝" readonly>
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>	
+            </section>
+            <section class="row_form">
+                <p class="title_form">服务器</p>
+                <div class="box_form">
+                	<!-- <input type="text" class="input_normal" placeholder="请选择您的区服" readonly id="showUserPicker"> -->
+                    <p class="text_normal" id="showUserPicker">请选择您的区服</p>
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>	
+            </section>
+            <section class="row_form">
+                <p class="title_form">角色名</p>
+                <div class="box_form">
+                	<input type="text" class="input_normal" placeholder="请输入您的角色名" >
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>	
+            </section>
+            <section class="row_form">
+                <p class="title_form">发生时间</p>
+                <div class="box_form">
+                	<input type="text" class="input_normal btn_date" placeholder="请选择发生时间" readonly id="showUserPicker">
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>	
+            </section>
+            <section class="row_form borderNo">
+                <p class="title_form">上传截图</p>
+                <div class="box_form">
+                	<input type="text" class="input_normal" placeholder="您还可以上传4张" readonly>
+                </div>
+                <i class="iconfontYZ iconYZ-youjiantou"></i>
+                <section class="next_row">
+                	<div action="#" class="dropzone" id="dropzoneForm">
+                        <div class="fallback">
+                            <input name="file" type="file" multiple />
+                        </div>
+                    </div>
+                </section>	
+            </section>
+            <section class="row_form">
+                <p class="title_form">详细描述</p>
+                <div class="box_form">
+                	<p class="tip_formN"><em class="numb_textarea">0</em>/250 字</p>
+                </div>
+                <section class="next_row">
+                	<textarea name="" maxlength="250" cols="" rows="3" class="textarea_normal" placeholder="请描述你的问题"></textarea>
+                </section>	
+            </section>	
+        </form>
+        
+    	<section class="fn_final">
+    		<a href="javascript:;" class="button btn-normal" style="margin: 0 0.3rem;">提交申请</a>
+    	</section>
+    </article>
+
+
+</section>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script src="../js/dropzone.min.js"></script>
+<script src="../js/main.js"></script>	
+<script>
+    Community.pageRem();
+    $(function($) {
+    	/**
+         * menu导航交互
+         */
+        $('#btn_menu').on('click', function(event) {
+        	event.preventDefault();
+            $(".menu_server").removeClass('hidden');
+        });
+        $('.menu_server li,.menu_server .bgCover').on('click', function(event) {
+            $(this).closest('.menu_server').addClass('hidden');
+        });
+
+        
+        /**
+         * 表单交互
+         */
+        //下拉选择
+        var userPicker = new mui.PopPicker();
+	    userPicker.buttons = ['cancle', 'ok']
+	    userPicker.setData([{
+	        value: 'ser1',
+	        text: '英雄本色'
+	    }, {
+	        value: 'ser2',
+	        text: '男儿当自强'
+	    },{
+	        value: 'ser3',
+	        text: '岁月小偷'
+	    }]);
+	    var showUserPickerButton = document.getElementById('showUserPicker');
+	    showUserPickerButton.addEventListener('tap', function(event) {
+	    	document.activeElement.blur();//关闭软键盘
+	        userPicker.show(function(items) {
+	        	console.log(items);
+	        	showUserPickerButton.innerHTML = items[0].text;
+	        });
+	    }, false);
+        
+        //下拉选择
+        var btn = document.querySelector(".btn_date");
+	    btn.addEventListener('tap', function() {
+	    	document.activeElement.blur();//关闭软键盘
+            var options = {
+            	labels:['Year', 'Mon', 'Day', 'Hour', 'min'],
+            	buttons: ['取消', '确认']
+            }
+            var picker = new mui.DtPicker(options);
+            picker.show(function(rs) {
+                console.log(rs);
+                btn.value=rs.text;
+                picker.dispose();
+            });
+        }, false);
+
+        //上传文件
+        Dropzone.options.dropzoneForm = {
+            paramName: "file", // The name that will be used to transfer the file
+            maxFilesize: 2, // MB
+            dictDefaultMessage: "<strong>请点击上传。</strong></br>(文件不大于2MB)",
+            addRemoveLinks: true
+        };
+        
+        //textarea字数计算&限制数字
+        $(".textarea_normal").textareaMax(".numb_textarea");
+
+        //提示样例
+        $("body").dialog({
+	        text: '颜值不够，提交失败',
+	        autoclose: true,
+	        icon: "point" // ok,error,point,loading
+	    });
+
+    });	
+</script>
+</body>
+</html>

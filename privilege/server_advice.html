@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>意见反馈-特权服务</title>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body style="visibility: hidden;">
+<section class="container">
+	<header class="header_user">
+		<a href="javascript:;" class="f_r btn_eventQuery iconfontYZ iconYZ-hanbaobao" id="btn_menu"></a>
+		<section class="menu_server hidden">
+			<div class="bgCover"></div>
+			<ul>
+				<li><a href="server_cdr.html"><i class="iconfontYZ iconYZ-KF_shujuhuifu"></i>数据恢复</a></li>
+				<li><a href="server_butler.html"><i class="iconfontYZ iconYZ-zhuanshuguanjia"></i>专属管家</a></li>
+				<li><a href="server_order.html"><i class="iconfontYZ iconYZ-yuyuefuwu"></i>预约服务</a></li>
+				<li class="current"><a href="server_advice.html"><i class="iconfontYZ iconYZ-jianyifankui"></i>建议反馈</a></li>
+				<li><a href="server_timeLimit.html"><i class="iconfontYZ iconYZ-xianshichuli"></i>限时处理</a></li>
+				<li><a href="server_selfService.html"><i class="iconfontYZ iconYZ-zizhufuwu"></i>自助服务</a></li>
+				<li><a href="server_rebate.html"><i class="iconfontYZ iconYZ-chongzhifanli"></i>充值返利</a></li>
+				<li class="borderT"><a href="server_hotline.html"><i class="iconfontYZ iconYZ-kefudianhua"></i>客服热线</a></li>
+				<li><a href="server_xiaoyou.html"><i class="iconfontYZ iconYZ-xiaoyoubangzhu"></i>小游帮助</a></li>
+			</ul>
+		</section>
+		<section class="f_l">
+		    <p><img src="../images/avar.jpg" alt="" class="photo_user"></p>
+	        <p class="name_user">Joy Fu 账号昵称</p>
+	        <img src="../images/vip/lv5.png" alt="" class="">
+        </section>
+	</header>
+    
+    <article class="borderT pB130">
+    	<section class="msg_server">
+    		<h3>服务对象</h3>
+    		<p>筑梦师V4以上会员用户</p>
+    	</section>
+    	<section class="weng_server">
+    	    <p>说明：</p>                                   
+	         <p>您提交的每一条建议我们都会认真查看，一经采纳我们都会联系您，并且赠送神秘好礼。</p>
+	         <p>请务必填写有效联系方式并使用您想要获得奖励的账号进行建议提交！</p>
+
+    	</section>
+
+    	<section class="fn_final">
+    		<a href="javascript:;" class="button btn-gray" style="margin: 0 0.3rem">您的等级未达到</a>
+    	</section>
+    </article>
+
+
+</section>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/main.js"></script>	
+<script>
+    Community.pageRem();
+    $(function($) {
+        /**
+         * menu导航交互
+         */
+        $('#btn_menu').on('click', function(event) {
+        	event.preventDefault();
+            $(".menu_server").removeClass('hidden');
+        });
+        $('.menu_server li,.menu_server .bgCover').on('click', function(event) {
+            $(this).closest('.menu_server').addClass('hidden');
+        });
+
+        $(".btn-gray").on('click', function(event) {
+            event.preventDefault();
+            $("body").dialog({
+                text: '您的等级未达到',
+                autoclose: true,
+                icon: "error" // ok,error,point,loading
+            });
+        });
+    });	
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>预约服务-特权服务</title>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body style="visibility: hidden;">
+<section class="container">
+	<header class="header_user">
+		<a href="javascript:;" class="f_r btn_eventQuery iconfontYZ iconYZ-hanbaobao" id="btn_menu"></a>
+		<section class="menu_server hidden">
+			<div class="bgCover"></div>
+			<ul>
+				<li><a href="server_cdr.html"><i class="iconfontYZ iconYZ-KF_shujuhuifu"></i>数据恢复</a></li>
+				<li><a href="server_butler.html"><i class="iconfontYZ iconYZ-zhuanshuguanjia"></i>专属管家</a></li>
+				<li class="current"><a href="server_order.html"><i class="iconfontYZ iconYZ-yuyuefuwu"></i>预约服务</a></li>
+				<li><a href="server_advice.html"><i class="iconfontYZ iconYZ-jianyifankui"></i>建议反馈</a></li>
+				<li><a href="server_timeLimit.html"><i class="iconfontYZ iconYZ-xianshichuli"></i>限时处理</a></li>
+				<li><a href="server_selfService.html"><i class="iconfontYZ iconYZ-zizhufuwu"></i>自助服务</a></li>
+				<li><a href="server_rebate.html"><i class="iconfontYZ iconYZ-chongzhifanli"></i>充值返利</a></li>
+				<li class="borderT"><a href="server_hotline.html"><i class="iconfontYZ iconYZ-kefudianhua"></i>客服热线</a></li>
+				<li><a href="server_xiaoyou.html"><i class="iconfontYZ iconYZ-xiaoyoubangzhu"></i>小游帮助</a></li>
+			</ul>
+		</section>
+		<section class="f_l">
+		    <p><img src="../images/avar.jpg" alt="" class="photo_user"></p>
+	        <p class="name_user">Joy Fu 账号昵称</p>
+	        <img src="../images/vip/lv5.png" alt="" class="">
+        </section>
+	</header>
+    
+    <article class="borderT pB130">
+    	<section class="msg_server">
+    		<h3>服务对象</h3>
+    		<p>筑梦家V1及以上会员用户</p>
+    		<h3 class="marginT30">服务时间</h3>
+    		<p>7*24小时服务</p>
+    	</section>
+    	<section class="weng_server">
+    	    <p>说明：</p>                                   
+	         <p>1、可预约的时间段 <em>10:00-19:00</em>可预约后3天<em>10:00-19:00</em>。</p>
+	         <p>2、上午 <b>06:00-12:00</b> 进入选择的用户可预约下午 <em>14:00-19:00</em>。</p>
+	         <p>3、下午 <b>12:00</b> 后至<b>次日 6:00</b> 可预约<em>次日10:00-19:00</em>。</p>
+	         <p>4、在预约成功后可以在下方预约表单中查看到预约记录，如出现非人为因素导致的无法按时进行回访，游族客服部将提前告知，并取消预约通知。</p>
+	         <p>5、如在沟通过程中出现不文明，辱骂，寻事等非正常沟通情况，游族客服可提前终止服务。最终解释权归游族所有。</p><br />
+    	</section>
+
+    	<section class="fn_final">
+    		<a href="server_cdr_record.html" class="button btn-default">申请记录</a>
+    		<a href="server_cdr_apply.html" class="button btn-normal">申请电话预约</a>
+    	</section>
+    </article>
+
+
+</section>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/main.js"></script>	
+<script>
+    Community.pageRem();
+    $(function($) {
+        /**
+         * menu导航交互
+         */
+        $('#btn_menu').on('click', function(event) {
+        	event.preventDefault();
+            $(".menu_server").removeClass('hidden');
+        });
+        $('.menu_server li,.menu_server .bgCover').on('click', function(event) {
+            $(this).closest('.menu_server').addClass('hidden');
+        });
+    });	
+</script>
+</body>
+</html>

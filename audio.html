@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>角色</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<section class="container heng">
+    <section class="head_audio">
+    	<p class="img_audio_detail">
+    		<img src="images/pic_2.jpg">
+    		<span class="btn_controlA"><i class="iconfontYZ iconYZ-bofang"></i></span>
+    	</p>
+    	<aside class="info_audio">
+    		<div class="wrap_this">
+	    		<h3>少年三国志同名主题器</h3>
+	    		<p class="singer_audio">歌手：陈赫</p>
+	    		<div class="clear"></div>
+	    		<p>游族旗下卡牌游戏《少年三国志》的同名主题曲，由小旭游戏音乐打造，陈赫倾情演唱。作为陈赫的处女作，一改往日恶搞形象，玩起了摇滚风。</p>
+	    		<audio id="audio_show" src="http://king.youzu.com/images/audio/02.太平盛世.mp3" type="audio/mp3" controls></audio>
+    		</div>
+    	</aside>
+    </section>
+    <div class="fn_audio">
+		<div>播放量：1288</div> <div class="yetLike"><i class="iconfontYZ iconYZ-weidianz"></i>喜欢：888</div> <div><i class="iconfontYZ iconYZ-fenx"></i>分享</div>
+	</div>
+    <section class="list_audio">
+    	<ul>
+    		<li class="head_listAudio">
+    			<div>歌曲</div>  <div>歌手</div>  <div>时长</div>  <div>播放</div>
+    		</li>
+    		<li>
+    			<div>少年三国志同名主题器</div>  
+    			<div>YOYO超人</div>  
+    			<div>03:54</div>  
+    			<div><a href="javascript:;" class="btn_playAudio" data-srcAudio="http://king.youzu.com/images/audio/01.大皇帝.mp3"><i class="iconfontYZ iconYZ-bofang"></i></a></div>
+    		</li>
+    		<li>
+    			<div>少年三国志</div>  
+    			<div>YOYO超人</div>  
+    			<div>03:54</div>  
+    			<div><a href="javascript:;" class="btn_playAudio" data-srcAudio="http://king.youzu.com/images/audio/02.太平盛世.mp3"><i class="iconfontYZ iconYZ-bofang"></i></a></div>
+    		</li>
+    		<li>
+    			<div>少三国志同名主题器</div>  
+    			<div>YOYO超人</div>  
+    			<div>03:54</div>  
+    			<div><a href="javascript:;" class="btn_playAudio" data-srcAudio="http://king.youzu.com/images/audio/03.城墙.mp3"><i class="iconfontYZ iconYZ-bofang"></i></a></div>
+    		</li>
+    		<li>
+    			<div>同名主题器</div>  
+    			<div>YOYO超人</div>  
+    			<div>03:54</div>  
+    			<div><a href="javascript:;" class="btn_playAudio"><i class="iconfontYZ iconYZ-bofang"></i></a></div>
+    		</li>
+    		<li>
+    			<div>少年三国志同名主题器</div>  
+    			<div>YOYO超人</div>  
+    			<div>03:54</div>  
+    			<div><a href="javascript:;" class="btn_playAudio"><i class="iconfontYZ iconYZ-bofang"></i></a></div>
+    		</li>
+    	</ul>
+    </section>
+</section>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>	
+<script>
+    Community.pageRem();
+    $(function($) {
+    	//tab
+        $(".tab_nav li").tab(".role_list");
+
+        //音频交互
+        var audio = document.querySelector("#audio_show");
+		$(audio).on('playing', function(event) {
+	        $(".btn_controlA").addClass('on');
+	    });
+	    $(audio).on('pause', function(event) {
+	        $(".btn_controlA").removeClass('on');
+	    });
+	    $(audio).on('ended', function(event) {
+	        $(".btn_controlA").removeClass('on');
+	    });
+        $(".btn_controlA").on('click', function(event) {
+        	if($(this).hasClass('on')){
+        		audio.pause();
+        	}else{
+        		audio.play();
+        	}
+        });
+         
+    });	
+</script>
+</body>
+</html>

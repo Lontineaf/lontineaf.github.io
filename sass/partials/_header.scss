@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.header {
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+    font-size: 18px;
+    position: relative;
+    z-index: 9999;
+    @include clearfix();
+    a {
+        width: 26px;
+        height: 26px;
+        display: block;
+        padding: 8px;
+        float: left;
+    }
+    .icon {
+        width: 26px;
+        height: 26px;
+    }
+    .headTit {
+        margin: 0 auto;
+        width: 80px;
+        color: #fff;
+    }
+}

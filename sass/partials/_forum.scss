@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.classAfter {
+	margin-bottom: 15px;
+}
+.classBox {
+    @include clearfix();
+    padding: 0 15px;
+    border-bottom: 1px solid $bc;
+    background: $bg;
+    position: relative;
+    height: 3.3rem;
+    span {
+        float: left;
+        font-size: 1.4rem;
+        line-height: 3.3rem;
+        margin-bottom:-1px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0 12px;
+    }
+     
+    span.cur {
+        @include curStatus();
+    }
+    li {
+        @include clearfix();
+    }
+    ul {
+        position: absolute;
+        top: 0;
+        left: 15px;
+    }
+}
+
+.classBefore {
+    background: $bg;
+    z-index: 999;
+    position: relative;
+}
+.forum2 {
+    .classAfter {
+        margin-bottom: 0;
+    }
+    .classBox {
+        border:0;
+
+    }
+    .forumWrap {
+        margin-top: 15px;
+    }
+}

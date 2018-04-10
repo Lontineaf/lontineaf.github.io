@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>管理收货地址</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,user-scalable=0">
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body style="visibility: hidden;">
+<div class="container">
+  <div class="AddressInfoPage"> 
+    
+    <!-- 地址信息表   -->
+    <section class="AddressListBox" >
+      <ul class="Add_show_zu">
+        <li>
+          <p class="Add_ren_ha" > <span class="o_sx">收货人：</span> <span class="o_name">龙颜有</span> <span class="o_tel">13722456627</span> </p>
+          <p class="Add_diz_ha" > <span class="o_add_a">上海</span> <span class="o_add_b">上海</span> <span class="o_add_c">黄浦区</span> <span class="o_add_d">马当路388号</span> </p>
+          <p class="Add_act_ha"> <span class="Duo_xuan"> <a href="javascript:;" class="on" ><i class="icon iconfontYZ iconYZ-fuxuankuang"></i>默认地址</a></span> <span class="act_xing"><a href="javascript:;"  class="axing_edit" ><i class="icon iconfontYZ iconYZ-bianji"></i>编辑</a> <a href="javascript:;"  class="axing_del" ><i class="icon iconfontYZ iconYZ-shanchu"></i>删除</a> </span> </p>
+        </li>
+        <li>
+          <p class="Add_ren_ha" > <span class="o_sx">收货人：</span> <span class="o_name">龙颜有</span> <span class="o_tel">13722456627</span> </p>
+          <p class="Add_diz_ha" > <span class="o_add_a">上海</span> <span class="o_add_b">上海</span> <span class="o_add_c">黄浦区</span> <span class="o_add_d">雁峰区先锋街道金果路11号2302雁峰区先锋街道金果路11号2302雁峰
+            区先锋街道金果路11号2302388号</span> </p>
+          <p class="Add_act_ha"> <span class="Duo_xuan"> <a href="javascript:;" ><i class="icon iconfontYZ iconYZ-fuxuankuang"></i>默认地址</a></span> <span class="act_xing"><a href="javascript:;"  class="axing_edit" ><i class="icon iconfontYZ iconYZ-bianji"></i>编辑</a> <a href="javascript:;"  class="axing_del" ><i class="icon iconfontYZ iconYZ-shanchu"></i>删除</a> </span> </p>
+        </li>
+        <li>
+          <p class="Add_ren_ha" > <span class="o_sx">收货人：</span> <span class="o_name">龙颜有</span> <span class="o_tel">13722456627</span> </p>
+          <p class="Add_diz_ha" > <span class="o_add_a">上海</span> <span class="o_add_b">上海</span> <span class="o_add_c">黄浦区</span> <span class="o_add_d">雁峰区先锋街道金果路11号2302雁峰区先锋街道金果路11号2302雁峰
+            区先锋街道金果路11号2302388号</span> </p>
+          <p class="Add_act_ha"> <span class="Duo_xuan"> <a href="javascript:;" ><i class="icon iconfontYZ iconYZ-fuxuankuang"></i>默认地址</a></span> <span class="act_xing"><a href="javascript:;"  class="axing_edit" ><i class="icon iconfontYZ iconYZ-bianji"></i>编辑</a> <a href="javascript:;"  class="axing_del" ><i class="icon iconfontYZ iconYZ-shanchu"></i>删除</a> </span> </p>
+        </li>
+        <li>
+          <p class="Add_ren_ha" > <span class="o_sx">收货人：</span> <span class="o_name">龙颜有</span> <span class="o_tel">13722456627</span> </p>
+          <p class="Add_diz_ha" > <span class="o_add_a">上海</span> <span class="o_add_b">上海</span> <span class="o_add_c">黄浦区</span> <span class="o_add_d">雁峰区先锋街道金果路11号2302雁峰区先锋街道金果路11号2302雁峰
+            区先锋街道金果路11号2302388号</span> </p>
+          <p class="Add_act_ha"> <span class="Duo_xuan"> <a href="javascript:;" ><i class="icon iconfontYZ iconYZ-fuxuankuang"></i>默认地址</a></span> <span class="act_xing"><a href="javascript:;"  class="axing_edit" ><i class="icon iconfontYZ iconYZ-bianji"></i>编辑</a> <a href="javascript:;"  class="axing_del" ><i class="icon iconfontYZ iconYZ-shanchu"></i>删除</a> </span> </p>
+        </li>
+      </ul>
+      <p class="Add_dizhi_ha"> <a href="javascript:;"  class="btn_xindizhi"> 添加新地址</a> </p>
+    </section>
+    <!-- 地址信息表 end   --> 
+    
+  </div>
+</div>
+
+<!--遮罩层-->
+<div class="pop_mark" style="display: none; " > </div>
+<!--遮罩层 end--> 
+
+<!-- 删除地址弹窗 -->
+<section class="pop_tong_group pop_ddizhi_group"  style="display:  none; " > <span class="pop_up_bg"></span><a  href="javascript:;"  title="关闭弹窗"  class="btn_pop_close" ></a>
+  <div class="pop_tong_box" >
+    <div class="ptong_title" >删除地址</div>
+    <div class="ptong_neirong" >
+      <p class="ddizhi_tx" >地址删除后不可恢复，确认删除吗？</p>
+      <p class="ddizhi_queha" > <a href="javascript:;" class="btn_t_lan btn_d_quxiao" title="取消"> 取消</a> <a href="javascript:;" class="btn_t_huang btn_d_del" title="删除"> 删除</a> </p>
+    </div>
+  </div>
+</section>
+<!-- 删除地址弹窗 end-->
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+$(function() {
+    Community.pageRem();
+      setTimeout(function(){ 
+      },200)
+      
+
+// 地址管理 点删除 出弹窗 
+      $(".axing_del").click(function () {
+        $(".pop_mark").show();   //遮罩层
+        $(".pop_tong_group").show();  // 外层弹框 
+      });
+      
+ // 关掉弹窗  
+      $(".btn_pop_close, .ddizhi_queha .btn_d_quxiao, .ddizhi_queha .btn_d_del").click(function () {
+        $(".pop_tong_group").hide();
+        $(".pop_mark").hide();  
+      });
+//end 
+ 
+})
+</script>
+</html>
