@@ -1,4 +1,4 @@
-#es6入门学习笔记（本文学习文档来自http://es6.ruanyifeng.com/#docs/intro，感谢阮一峰老师的分享）
+# es6入门学习笔记（本文学习文档来自http://es6.ruanyifeng.com/#docs/intro）
 
 一、es6简介
 	1.目前使用率最高的是es5，es6是在es5的基础上进行了大量的扩展，使得es5更加接近其他后台编程语言。
