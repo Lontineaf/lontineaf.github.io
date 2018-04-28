@@ -1,6 +1,6 @@
-# es6入门学习笔记（本文学习文档来自http://es6.ruanyifeng.com/#docs/intro）
+# ES6入门学习笔记（本文学习文档来自http://es6.ruanyifeng.com/#docs/intro）
 
-### 一、es6简介
+### 一、ES6简介
 1. 目前使用率最高的是es5，es6是在es5的基础上进行了大量的扩展，使得es5更加接近其他后台编程语言。
 2. 现代浏览器对es6的支持程度比较高，node环境下可以用命令node --v8-options | grep harmony 查看支持程度。
 3. 使用babel对es6进行转码，在根目录配置.babelrc 定义转码规则，并设置不同阶段语法提案的转码规则（babel-preset-stage-2）。
