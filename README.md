@@ -22,5 +22,5 @@
 4. 变量声明时模式不能使用小括号，赋值时，非模式部分可以使用小括号。
 5. 用途：交换变量的值，从函数返回多个值，函数参数的定义，提取JOSN数据，
 ### 四、变量的扩展
-1. 字符串的扩展，支持了对Unicode编码大于0xFFFF的字符的支持，包括codePointAt()fromCodePoint()at()；查找字符串方法的扩展，include(),startsWidth(),endsWidth();padStart()padEnd()补充规定长度字符串，常用于不全特定格式的字符串；``保留字符串原有格式，${}中可放入js代码，可应用于模板编译和标签模板（函数名后紧跟``,``中的值为函数的参数）
-	
+1. 字符串的扩展，支持了对Unicode编码大于0xFFFF的字符的支持，包括codePointAt()fromCodePoint()at()；查找字符串方法的扩展，include(),startsWidth(),endsWidth();padStart()padEnd()补充规定长度字符串，常用于不全特定格式的字符串；/`/`保留字符串原有格式，${}中可放入js代码，可应用于模板编译和标签模板（函数名后紧跟/`/`,/`/`中的值为函数的参数）
+2. 正则
