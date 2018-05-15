@@ -32,4 +32,4 @@
 1. 为了防止命名冲突，es6引入了symbol类型，Symbol函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分；Symbol 值不能与其他类型的值进行运算，会报错。
 2. 作为属性名,只能以[Symbol()]形式定义，且不可以被for...in,for...of,Object.keys(),Object.getOwnPropertyNames(),JSON.stringify()获取到，可以使用Object.getOwnPropertySymbols（）方法获取对象所有Symbol类型的属性数组。
 3. Symbol.for方法，它接受一个字符串作为参数，然后搜索有没有以该参数作为名称的 Symbol 值。如果有，就返回这个 Symbol 值，否则就新建并返回一个以该字符串为名称的 Symbol 值，Symbol.keyFor方法返回一个已登记（用Symbol.for方法定义的称之为已登记）的 Symbol 类型值的key；Symbol.for为 Symbol 值登记的名字，是全局环境的，可以在不同的 iframe 或 service worker 中取到同一个值。
-4. 除了定义自己使用的 Symbol 值以外，ES6 还提供了 11 个内置的 Symbol 值，指向语言内部使用的方法；对象的Symbol.hasInstance属性，指向一个内部方法。当其他对象使用instanceof运算符，判断是否为该对象的实例时，会调用这个方法。比如，foo instanceof Foo在语言内部，实际调用的是Foo[Symbol.hasInstance](foo)。
+4. 除了定义自己使用的 Symbol 值以外，ES6 还提供了 11 个内置的 Symbol 值，指向语言内部使用的方法；对象的Symbol.hasInstance属性，指向一个内部方法。当其他对象使用instanceof运算符，判断是否为该对象的实例时，会调用这个方法。比如，foo instanceof Foo在语言内部，实际调用的是Foo\[Symbol.hasInstance\](foo)。
