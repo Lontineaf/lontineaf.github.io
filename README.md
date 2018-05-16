@@ -33,3 +33,10 @@
 2. 作为属性名,只能以[Symbol()]形式定义，且不可以被for...in,for...of,Object.keys(),Object.getOwnPropertyNames(),JSON.stringify()获取到，可以使用Object.getOwnPropertySymbols（）方法获取对象所有Symbol类型的属性数组。
 3. Symbol.for方法，它接受一个字符串作为参数，然后搜索有没有以该参数作为名称的 Symbol 值。如果有，就返回这个 Symbol 值，否则就新建并返回一个以该字符串为名称的 Symbol 值，Symbol.keyFor方法返回一个已登记（用Symbol.for方法定义的称之为已登记）的 Symbol 类型值的key；Symbol.for为 Symbol 值登记的名字，是全局环境的，可以在不同的 iframe 或 service worker 中取到同一个值。
 4. 除了定义自己使用的 Symbol 值以外，ES6 还提供了 11 个内置的 Symbol 值，指向语言内部使用的方法；对象的Symbol.hasInstance属性，指向一个内部方法。当其他对象使用instanceof运算符，判断是否为该对象的实例时，会调用这个方法。比如，foo instanceof Foo在语言内部，实际调用的是Foo\[Symbol.hasInstance\](foo)。
+### 六、set和map
+1. set它类似于数组，但是成员的值都是唯一的，没有重复的值。
+2. set的操作方法：add(value)：添加某个值，返回 Set 结构本身，delete(value)：删除某个值，返回一个布尔值，表示删除是否成功，has(value)：返回一个布尔值，表示该值是否为Set的成员，clear()：清除所有成员，没有返回值。
+3. set的遍历方法：keys()：返回键名的遍历器，values()：返回键值的遍历器，entries()：返回键值对的遍历器，forEach()：使用回调函数遍历每个成员；由于 Set 结构没有键名，只有键值（或者说键名和键值是同一个值），所以keys方法和values方法的行为完全一致；Set 结构的实例默认可遍历，也就是可以省略上诉方法的调用。
+4. WeakSet 结构与 Set 类似，区别是WeakSet 的成员只能是对象，而不能是其他类型的值，其次，WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。
+5. Map结构类似于对象，但是对象的属性只能是字符串，而map的key可以是任意类型，是一种值-值的结构。map的key如果是引用类型，如果引用地址不相同，则为不同的key;如果是简单类型，则只要两个值严格相等，Map 将其视为一个键，虽然NaN不严格相等于自身，但 Map 将其视为同一个键。
+6. WeakMap结构与Map结构类似，首先，WeakMap只接受对象作为键名（null除外），不接受其他类型的值作为键名，其次，WeakMap的键名所指向的对象，不计入垃圾回收机制。
