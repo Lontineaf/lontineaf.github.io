@@ -43,3 +43,5 @@
 ### 七、Proxy
 1. Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”，涉及的操作有13种。
 2. Proxy.revocable()，let {proxy, revoke} = Proxy.revocable(target, handler);当执行revoke()方法时，撤销proxy实例。
+### 八、Reflect
+1. Reflect的设计是为了更加规范Object对象，将Object对象上一些内部使用的方法,比如defineProperty()等移植到Reflect上，使得以后不能通过Object对象来访问这些属性，同时将一些命令行语法（key in object）转换为函数式的调用（Reflect.has(obj,name)）;Reflect对象的方法与Proxy对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法。
