@@ -45,3 +45,6 @@
 2. Proxy.revocable()，let {proxy, revoke} = Proxy.revocable(target, handler);当执行revoke()方法时，撤销proxy实例。
 ### 八、Reflect
 1. Reflect的设计是为了更加规范Object对象，将Object对象上一些内部使用的方法,比如defineProperty()等移植到Reflect上，使得以后不能通过Object对象来访问这些属性，同时将一些命令行语法（key in object）转换为函数式的调用（Reflect.has(obj,name)）;Reflect对象的方法与Proxy对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法。
+### 九、Promise
+1. Promise是一种异步编程的解决方案，可以理解为一个对象，它包含了未来才会结束的事件（异步操作），从它可以获取这个异步操作的信息，它的两大特点是：包含外界无法改变的三种状态（pending进行中，resloved成功，rejected失败），只有异步操作才能觉得返回哪种状态；一旦状态发生改变，结果就是确定的，不会再发生改变，再次添加回调会立即返回已经确定的结果。有了Promise对象，就可以把异步操作用同步的方式表达出来。
+2. Promise实例的生成，根据es6语法，Promise作为一个构造函数来创建实例，new Promise(function(resloved,rejected){}),传入一个函数，函数参数为两种状态发生时执行的函数，使用promise.then(resloved,rejected)方法指定具体的回调函数；如果 Promise 状态已经变成resolved，再抛出错误是无效的。
