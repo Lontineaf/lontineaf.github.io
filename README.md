@@ -48,3 +48,6 @@
 ### 九、Promise
 1. Promise是一种异步编程的解决方案，可以理解为一个对象，它包含了未来才会结束的事件（异步操作），从它可以获取这个异步操作的信息，它的两大特点是：包含外界无法改变的三种状态（pending进行中，resloved成功，rejected失败），只有异步操作才能觉得返回哪种状态；一旦状态发生改变，结果就是确定的，不会再发生改变，再次添加回调会立即返回已经确定的结果。有了Promise对象，就可以把异步操作用同步的方式表达出来。
 2. Promise实例的生成，根据es6语法，Promise作为一个构造函数来创建实例，new Promise(function(resloved,rejected){}),传入一个函数，函数参数为两种状态发生时执行的函数，使用promise.then(resloved,rejected)方法指定具体的回调函数；如果 Promise 状态已经变成resolved，再抛出错误是无效的。
+### 十、Iterator 和 for...of循环
+1. 遍历器（Iterator）就是这样一种机制。它是一种接口，为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）。遍历器对象本质上，就是一个指针对象。
+2. 原生具备 Iterator 接口的数据结构如下。Array,Map,Set,String,TypedArray,函数的 arguments 对象,NodeList 对象。
