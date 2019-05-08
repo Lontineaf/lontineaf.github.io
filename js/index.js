@@ -3,6 +3,7 @@
   var circles, textPixels, textFormed;
   var offsetX, offsetY, text;
   var colors = ["#B2949D", "#FFF578", "#FF5F8D", "#37A9CC", "#188EB2"];
+  var flag = false;
 
   function init() {
     initStages();
@@ -13,19 +14,24 @@
     $(".heart").click(function() {
       var $this = $(this);
       $this.hide();
-      createText("宝宝");
-      setTimeout(function() {
-        explode();
+      if(!flag){
+        createText("宝宝");
         setTimeout(function() {
-          createText("我爱你");
+          explode();
           setTimeout(function() {
-            explode();
+            createText("我爱你");
             setTimeout(function() {
-              $this.show();
-            }, 810);
-          }, 2000);
-        }, 1000);
-      }, 2000);
+              explode();
+              setTimeout(function() {
+                $this.show();
+                flag = true;
+              }, 810);
+            }, 2000);
+          }, 1000);
+        }, 2000);
+      }else{
+        window.location.href='./pages/time.html'
+      }
     });
   }
 
