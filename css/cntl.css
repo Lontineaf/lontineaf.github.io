@@ -1,12 +1,17 @@
+*{
+  padding:0;
+  margin:0;
+}
 body {
 	font-family: Arial;
 }
 
-
+.jq22-container{
+  padding:20px 10px;
+}
 .cntl {
 	position: relative;
 	width: 100%;
-	overflow: hidden;
 }
 
 .cntl-center {
@@ -21,26 +26,26 @@ body {
 	width: 10px;
 	top: 0;
 	bottom: 0;
-	background-color: #ccc;
-	box-shadow: inset 0px 0px 7px -2px #000;
+	background-color: #eee;
+	box-shadow: inset 0px 0px 7px -2px #333;
 }
 
 
 .cntl-bar-fill {
-	background-color: #009ABB;
+	background-color: pink;
 	position: absolute;
 	left:0;
 	right:0;
 	top:0;
 	height:0;
-
+  opacity: 0.8;
+  box-shadow: inset 0px 0px 7px -1px #ff0000;
 }
 
 .cntl-state {
 	position: relative;
 	width:100%;
-	min-height: 200px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 
 .cntl-state::after {
@@ -50,30 +55,30 @@ body {
 }
 
 .cntl-icon {
-	border-radius: 50%;
-	width: 80px;
-	height: 80px;
-	background-color: #00313C;
-	border: solid 3px #009ABB;
-	box-shadow: 0px 0px 19px -9px #000;
+  /* display: none; */
+	width: 60px;
+	height: 60px;
+	background-size: 100%;
+  background-repeat: no-repeat;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjE3M3B4IiBoZWlnaHQ9IjE1OHB4IiB2aWV3Qm94PSIwIDAgMTczIDE1OCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTczIDE1OCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjRUY0NjU3IiBkPSJNMTU3LjMzMSwxNS41MDRjLTE5LjU1OS0xOS41NTktNTEuMjcxLTE5LjU1OS03MC44MzEsMGMtMTkuNTU5LTE5LjU1OS01MS4yNzEtMTkuNTU5LTcwLjgzMSwwDQoJYy0xOS41NTksMTkuNTU5LTE5LjU1OSw1MS4yNzEsMCw3MC44MzFsNzAuODMxLDcwLjgzbDcwLjgzMS03MC44M0MxNzYuODksNjYuNzc1LDE3Ni44OSwzNS4wNjQsMTU3LjMzMSwxNS41MDR6Ii8+DQo8L3N2Zz4=");
 	position: absolute;
 	top: 0;
 	text-align: center;
-	line-height: 80px;
-	font-size: 40px;
+	line-height: 50px;
+	font-size: 20px;
 	color: #fff;
 }
 
 .cntl-content {
 	width: 40%;
-	padding: 2%;
-	background-color: rgba(238, 238, 238, 0.25);
+	padding:15px 10px;
+	background-color: rgba(255, 0, 0, 0.05);
 	border-radius: 8px;
-	border-bottom: solid 3px #009ABB;
+	border-bottom: solid 3px pink;
 	float:left;
-	opacity:0;
 	position:relative;
-	margin-left:-40%;
+  margin-left:-40%;
+  box-shadow: 0 2px 5px pink;
 }
 
 .cntl-state:nth-child(2n+2) .cntl-content {
@@ -84,7 +89,9 @@ body {
 .cntl-image {
 	opacity:0;
 	width: 40%;
-	padding: 2%;
+  padding: 10px;
+  box-shadow: 0 2px 5px pink;
+  margin-top:10px;
 }
 
 .cntl-state:nth-child(2n+1) .cntl-image {
@@ -135,7 +142,7 @@ animations
 
 	.cntl-bar {
 		left:auto;
-		right: 37px;
+		right: 25px;
 	}
 
 	.cntl-content {
@@ -143,7 +150,7 @@ animations
 		float:none;
 	}
 	.cntl-state:nth-child(2n+2) .cntl-content {
-		margi-right:0%;
+		margin-right:0%;
 		float:none;
 	}
 
@@ -161,7 +168,8 @@ animations
 
 	.cntl-icon {
 		left: auto;
-		right: 0;
+    right: 0;
+    top:-15px;
 	}
 
 }
