@@ -30,7 +30,7 @@
           }, 1000);
         }, 2000);
       }else{
-        window.location.href='./pages/time.html'
+        window.location.href='https://m.eqxiu.com/s/59kddiQF'
       }
     });
   }
